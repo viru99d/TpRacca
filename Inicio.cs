@@ -11,16 +11,40 @@ using System.Data.SqlClient;
 
 namespace FotocopiadoraFacultad
 {
-    public partial class Inicio : Form
+    public partial class usuario : Form
     {
-        public Inicio()
+        public usuario()
         {
             InitializeComponent();
         }
 
+        private void controlarBotones()
+        {
+            string usuario = "gonzalo123";
+            if (nombre.Text.Trim() != string.Empty && nombre.Text == usuario);
+            {
+                botonIngresar.Enabled = true;
+                errorProvider1.SetError(nombre, "");
+            }
+
+            else
+            {
+                if (nombre.Text != usuario)
+                    errorProvider1.SetError(nombre, "El usuario no está registrado, comuniquese con el creador del sistema");
+
+                else
+                {
+                    errorProvider1.SetError(nombre, "Debe introducir su usuario");
+                }
+                botonIngresar.Enabled = false;
+                nombre.Focus();
+            }
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            botonIngresar.Enabled = false;
 
         }
 
@@ -53,5 +77,22 @@ namespace FotocopiadoraFacultad
                 MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ingresarUsuario_TextChanged(object sender, EventArgs e)
+        {
+            controlarBotones();
+        }
+
+        
     }
 }

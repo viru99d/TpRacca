@@ -1,6 +1,6 @@
 ﻿namespace FotocopiadoraFacultad
 {
-    partial class Inicio
+    partial class usuario
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,55 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usuario));
+            this.botonIngresar = new System.Windows.Forms.Button();
+            this.nombre = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contraseña = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.botonSalir = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // botonIngresar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fotocopiadora";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.botonIngresar.Location = new System.Drawing.Point(280, 239);
+            this.botonIngresar.Name = "botonIngresar";
+            this.botonIngresar.Size = new System.Drawing.Size(264, 66);
+            this.botonIngresar.TabIndex = 1;
+            this.botonIngresar.Text = "Ingresar";
+            this.botonIngresar.UseVisualStyleBackColor = true;
+            this.botonIngresar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // nombre
             // 
-            this.button1.Location = new System.Drawing.Point(281, 186);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 66);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Inicio";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(208, 153);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(66, 18);
+            this.nombre.TabIndex = 2;
+            this.nombre.Text = "Usuario:";
             // 
-            // Inicio
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(280, 154);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(264, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.ingresarUsuario_TextChanged);
+            // 
+            // contraseña
+            // 
+            this.contraseña.AutoSize = true;
+            this.contraseña.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraseña.Location = new System.Drawing.Point(181, 192);
+            this.contraseña.Name = "contraseña";
+            this.contraseña.Size = new System.Drawing.Size(93, 18);
+            this.contraseña.TabIndex = 4;
+            this.contraseña.Text = "Contraseña:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(280, 193);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(264, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // botonSalir
+            // 
+            this.botonSalir.Location = new System.Drawing.Point(694, 413);
+            this.botonSalir.Name = "botonSalir";
+            this.botonSalir.Size = new System.Drawing.Size(98, 36);
+            this.botonSalir.TabIndex = 6;
+            this.botonSalir.Text = "Salir";
+            this.botonSalir.UseVisualStyleBackColor = true;
+            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tomato;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(804, 461);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.botonSalir);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.contraseña);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nombre);
+            this.Controls.Add(this.botonIngresar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.Name = "Inicio";
+            this.Name = "usuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servicio de fotocopias";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button botonIngresar;
+        private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label contraseña;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button botonSalir;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
