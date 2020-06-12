@@ -13,6 +13,9 @@ namespace FotocopiadoraFacultad
 {
     public partial class inicio : Form
     {
+        string contraseñaUsuario = "fotocopiadora123";
+        string usuarioRegistrado = "fotocopiadora123";
+
         public inicio()
         {
             InitializeComponent();
@@ -20,12 +23,11 @@ namespace FotocopiadoraFacultad
 
         private void controlarBotones()
         {
-            string usuarioRegistrado = "gonzalo123";
-
+            
             if (nombre.Text.Trim() != string.Empty && nombre.Text == usuarioRegistrado)
             {
                 botonIngresar.Enabled = true;
-                errorProvider1.SetError(nombre, " ");
+                errorProvider1.SetError(nombre, "");
             }
 
             else
@@ -37,43 +39,10 @@ namespace FotocopiadoraFacultad
                 {
                     errorProvider1.SetError(nombre, "Debe introducir su usuario");
                 }
-                botonIngresar.Enabled = false;
-                nombre.Focus();
-            }
-        }
-
-        private void controlarBotones1()
-        {
-            if (nombre.Text.Trim() != string.Empty)
-            {
                 botonIngresar.Enabled = true;
-                errorProvider1.SetError(contraseña, " ");
-            }
-
-            else
-            {
-                errorProvider1.SetError(nombre, "Debe introducir su usuario");
-                
-                botonIngresar.Enabled = false;
                 nombre.Focus();
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection Con = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
-                Con.Open();
-                MessageBox.Show("Se ha conectado correctamente a la base de datos");
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
-            }
-        }
-
 
         private void botonSalir_Click(object sender, EventArgs e)
         {
@@ -85,15 +54,31 @@ namespace FotocopiadoraFacultad
             controlarBotones();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void botonIngresar_Click(object sender, EventArgs e)
         {
-            controlarBotones1();
+           
+            if (contraseña.Text != contraseñaUsuario)
+            {
+                System.Console.WriteLine("Contraseña incorrecta");
+            }
+
+            try
+            {
+                SqlConnection Con = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
+                Con.Open();
+                MessageBox.Show("Se ha conectado correctamente a la base de datos");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
+            }
+
         }
 
-        private void botonIngresar_Click(object sender, EventArgs e)
+        private void inicio_Load(object sender, EventArgs e)
         {
             botonIngresar.Enabled = false;
         }
-
     }
 }
