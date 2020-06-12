@@ -24,7 +24,10 @@ namespace FotocopiadoraFacultad
 
         private void RegistroPedidos_Click(object sender, EventArgs e)
         {
-
+            using (registrarPedido ventanaRegistrarPedidos = new registrarPedido())
+            {
+                ventanaRegistrarPedidos.ShowDialog();
+            }
         }
     }
 }

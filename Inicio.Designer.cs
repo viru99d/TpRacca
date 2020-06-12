@@ -168,7 +168,7 @@
             this.MinimizeBox = false;
             this.Name = "Inicio";
             this.Text = "Servicio de fotocopias";
-            this.Load += new System.EventHandler(this.Form1_Load);
+        
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
