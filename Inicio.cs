@@ -11,25 +11,26 @@ using System.Data.SqlClient;
 
 namespace FotocopiadoraFacultad
 {
-    public partial class usuario : Form
+    public partial class inicio : Form
     {
-        public usuario()
+        public inicio()
         {
             InitializeComponent();
         }
 
         private void controlarBotones()
         {
-            string usuario = "gonzalo123";
-            if (nombre.Text.Trim() != string.Empty && nombre.Text == usuario);
+            string usuarioRegistrado = "gonzalo123";
+
+            if (nombre.Text.Trim() != string.Empty && nombre.Text == usuarioRegistrado)
             {
                 botonIngresar.Enabled = true;
-                errorProvider1.SetError(nombre, "");
+                errorProvider1.SetError(nombre, " ");
             }
 
             else
             {
-                if (nombre.Text != usuario)
+                if (!(nombre.Text == usuarioRegistrado))
                     errorProvider1.SetError(nombre, "El usuario no está registrado, comuniquese con el creador del sistema");
 
                 else
@@ -41,26 +42,21 @@ namespace FotocopiadoraFacultad
             }
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void controlarBotones1()
         {
-            botonIngresar.Enabled = false;
+            if (nombre.Text.Trim() != string.Empty)
+            {
+                botonIngresar.Enabled = true;
+                errorProvider1.SetError(contraseña, " ");
+            }
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
+            else
+            {
+                errorProvider1.SetError(nombre, "Debe introducir su usuario");
+                
+                botonIngresar.Enabled = false;
+                nombre.Focus();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,21 +74,26 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void botonSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void ingresarUsuario_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             controlarBotones();
         }
 
-        
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            controlarBotones1();
+        }
+
+        private void botonIngresar_Click(object sender, EventArgs e)
+        {
+            botonIngresar.Enabled = false;
+        }
+
     }
 }

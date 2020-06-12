@@ -16,7 +16,7 @@ namespace FotocopiadoraFacultad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new usuario());
+            Application.Run(new inicio());
         }
     }
 }

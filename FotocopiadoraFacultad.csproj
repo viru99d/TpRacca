@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pagina2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagina2.Designer.cs">
+      <DependentUpon>Pagina2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
