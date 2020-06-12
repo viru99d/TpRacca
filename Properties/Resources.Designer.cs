@@ -59,5 +59,17 @@ namespace FotocopiadoraFacultad.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap copiadora_profesional_oficina_documentos_papel_impresion_impresora_multifuncionales_aislo_ejemplo_vector_maquina_impresora_copiadora_trabajo_oficina_53562_6147__1_ {
+            get {
+                object obj = ResourceManager.GetObject("copiadora-profesional-oficina-documentos-papel-impresion-impresora-multifuncional" +
+                        "es-aislo-ejemplo-vector-maquina-impresora-copiadora-trabajo-oficina_53562-6147 (" +
+                        "1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -11,57 +11,22 @@ using System.Data.SqlClient;
 
 namespace FotocopiadoraFacultad
 {
-    public partial class inicio : Form
+    public partial class Inicio : Form
     {
-        string contraseñaUsuario = "fotocopiadora123";
-        string usuarioRegistrado = "fotocopiadora123";
-
-        public inicio()
+        public Inicio()
         {
             InitializeComponent();
         }
 
-        private void controlarBotones()
+        private void Form1_Load(object sender, EventArgs e)
         {
             
-            if (nombre.Text.Trim() != string.Empty && nombre.Text == usuarioRegistrado)
-            {
-                botonIngresar.Enabled = true;
-                errorProvider1.SetError(nombre, "");
-            }
 
-            else
-            {
-                if (!(nombre.Text == usuarioRegistrado))
-                    errorProvider1.SetError(nombre, "El usuario no está registrado, comuniquese con el creador del sistema");
-
-                else
-                {
-                    errorProvider1.SetError(nombre, "Debe introducir su usuario");
-                }
-                botonIngresar.Enabled = true;
-                nombre.Focus();
-            }
         }
 
-        private void botonSalir_Click(object sender, EventArgs e)
+        
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-            controlarBotones();
-        }
-
-        private void botonIngresar_Click(object sender, EventArgs e)
-        {
-           
-            if (contraseña.Text != contraseñaUsuario)
-            {
-                System.Console.WriteLine("Contraseña incorrecta");
-            }
-
             try
             {
                 SqlConnection Con = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
@@ -73,12 +38,59 @@ namespace FotocopiadoraFacultad
             {
                 MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
             }
-
         }
 
-        private void inicio_Load(object sender, EventArgs e)
+        private void Nombre_LostFocus(object sender, EventArgs e)
         {
-            botonIngresar.Enabled = false;
+            controlBotonNombre();
+        }
+
+        private void Contraseña_LostFocus(object sender, EventArgs e)
+        {
+            controlBotonContraseña();
+        }
+
+
+        private void controlBotonNombre()
+        {
+            if (Nombre.Text.Trim() == "Fotocopiadora 123")
+            {
+                inicioSesión.Enabled = true;
+                errorProvider1.SetError(Nombre, "");
+            }
+            else
+            {
+                errorProvider1.SetError(Nombre, "El usuario es incorrecto");
+                inicioSesión.Enabled = false;
+                Nombre.Focus();
+            }
+        }
+
+        private void controlBotonContraseña()
+        {
+            if (Contraseña.Text.Trim() == "12345678")
+            {
+                inicioSesión.Enabled = true;
+                errorProvider2.SetError(Contraseña, "");
+            }
+            else
+            {
+                errorProvider2.SetError(Contraseña, "La contraseña es incorrecta");
+                inicioSesión.Enabled = false;
+                Contraseña.Focus();
+            }
+        }
+
+        private void inicioSesión_Click(object sender, EventArgs e)
+        {
+            inicioSesión.Enabled = false;
+            using (InicioDos ventanaInicioDos = new InicioDos())
+                ventanaInicioDos.ShowDialog();
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

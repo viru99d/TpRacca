@@ -50,6 +50,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="InicioDos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioDos.Designer.cs">
+      <DependentUpon>InicioDos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagina2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +83,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioDos.resx">
+      <DependentUpon>InicioDos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +121,7 @@
   <ItemGroup>
     <Content Include="42945.ico" />
     <Content Include="images.ico" />
+    <None Include="Resources\copiadora-profesional-oficina-documentos-papel-impresion-impresora-multifuncionales-aislo-ejemplo-vector-maquina-impresora-copiadora-trabajo-oficina_53562-6147 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
