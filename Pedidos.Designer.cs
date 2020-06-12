@@ -34,9 +34,10 @@
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(29, 384);
+            this.Volver.Location = new System.Drawing.Point(39, 473);
+            this.Volver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(166, 54);
+            this.Volver.Size = new System.Drawing.Size(221, 66);
             this.Volver.TabIndex = 3;
             this.Volver.Text = "VOLVER";
             this.Volver.UseVisualStyleBackColor = true;
@@ -44,9 +45,10 @@
             // 
             // RegistroPedidos
             // 
-            this.RegistroPedidos.Location = new System.Drawing.Point(311, 107);
+            this.RegistroPedidos.Location = new System.Drawing.Point(415, 132);
+            this.RegistroPedidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RegistroPedidos.Name = "RegistroPedidos";
-            this.RegistroPedidos.Size = new System.Drawing.Size(166, 54);
+            this.RegistroPedidos.Size = new System.Drawing.Size(221, 66);
             this.RegistroPedidos.TabIndex = 4;
             this.RegistroPedidos.Text = "Registrar Pedidos";
             this.RegistroPedidos.UseVisualStyleBackColor = true;
@@ -54,13 +56,14 @@
             // 
             // Pedidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.RegistroPedidos);
             this.Controls.Add(this.Volver);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Pedidos";
             this.Text = "Pedidos";
             this.ResumeLayout(false);

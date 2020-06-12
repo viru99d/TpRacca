@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace FotocopiadoraFacultad
 {
-    public partial class Pagina2 : Form
+    public partial class registrarPedido : Form
     {
-        public Pagina2()
+        public registrarPedido()
         {
             InitializeComponent();
         }
+
+        private void dtgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
     }
 }

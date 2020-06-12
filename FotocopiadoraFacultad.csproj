@@ -56,6 +56,17 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control_de_Pedidos_Fotocopiadora_UTNDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="registrarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registrarPedido.Designer.cs">
+      <DependentUpon>registrarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,12 +80,6 @@
     <Compile Include="InicioDos.Designer.cs">
       <DependentUpon>InicioDos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagina2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pagina2.Designer.cs">
-      <DependentUpon>Pagina2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registrarPedido.resx">
+      <DependentUpon>registrarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioDos.resx">
       <DependentUpon>InicioDos.cs</DependentUpon>
@@ -105,6 +113,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsc">
+      <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Control_de_Pedidos_Fotocopiadora_UTNDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Control_de_Pedidos_Fotocopiadora_UTNDataSet.xss">
+      <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
