@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -21,19 +16,18 @@ namespace FotocopiadoraFacultad
             try
             {
                 cnn = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
-                cnn.Open();
-
             }
             catch (Exception error)
             {
                 MessageBox.Show("No se puedo conectar a la base de datos: " + error.ToString());
             }
         }
-        
+
         public void llenar(ComboBox cb)
         {
             try
             {
+                cnn.Open();
                 cmd = new SqlCommand("Select Nombre from Universidad", cnn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -42,8 +36,9 @@ namespace FotocopiadoraFacultad
                 }
                 cb.SelectedIndex = 0;
                 dr.Close();
+                cnn.Close();
             }
-            catch(Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show("No se llenó el casillero: " + error.ToString());
             }
@@ -53,6 +48,7 @@ namespace FotocopiadoraFacultad
         {
             try
             {
+                cnn.Open();
                 cmd = new SqlCommand("Select Nombre from Materia", cnn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -61,6 +57,7 @@ namespace FotocopiadoraFacultad
                 }
                 cc.SelectedIndex = 0;
                 dr.Close();
+                cnn.Close();
             }
             catch (Exception error)
             {
@@ -72,6 +69,7 @@ namespace FotocopiadoraFacultad
         {
             try
             {
+                cnn.Open();
                 cmd = new SqlCommand("Select Nombre from Carrera", cnn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -80,6 +78,7 @@ namespace FotocopiadoraFacultad
                 }
                 cd.SelectedIndex = 0;
                 dr.Close();
+                cnn.Close();
             }
             catch (Exception error)
             {
@@ -87,8 +86,21 @@ namespace FotocopiadoraFacultad
             }
         }
 
-
-
-
+        public void AgregarCliente(int dni, string nombre, string telefono, int SocioCoop)
+        {
+            try
+            {
+                string Cadena = $"Insert into Cliente(IdCliente, Nombre, Telefono, SocioDeCoop) values({dni}, '{nombre}','{telefono}',{SocioCoop});";
+                cnn.Open();
+                cmd = new SqlCommand(Cadena, cnn);
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo agregar al cliente");
+                cnn.Close();
+            }
+        }
     }
 }

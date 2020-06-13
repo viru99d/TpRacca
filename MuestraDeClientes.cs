@@ -31,6 +31,7 @@ namespace FotocopiadoraFacultad
         private void Buscar_Click(object sender, EventArgs e)
         {
             var conexion = new Conexion();
+            conexion.cnn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter("Select * from Cliente", conexion.cnn);
             DataSet DS = new DataSet();
             var commandBuilder = new SqlCommandBuilder(Adaptador);

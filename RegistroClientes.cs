@@ -44,19 +44,15 @@ namespace FotocopiadoraFacultad
 
         private void Cargar_Click(object sender, EventArgs e)
         {
-            string Cadena = "Insert into Productos(Id, Nombre, Telefono, SocioDeCoop) values(" + Idtext.Text + ",'" + NombreText.Text + "'," + TelefonoText.Text + ",'" + SocioDeCoop.Text + "');";
-            SqlConnection conexion = new SqlConnection(@"Data Source=UTNSF023\SQLEXPRESS;Initial Catalog=ProdEnOferta;User ID=sa;Password=utn");
-            SqlCommand Comando = new SqlCommand(Cadena, conexion);
-            conexion.Open();
-            Comando.ExecuteNonQuery();
-            conexion.Close();
+            //Idtext.Text + ",'" + NombreText.Text + "'," + TelefonoText.Text + ",'" + SocioDeCoop.Text;
+            int dni = int.Parse(Idtext.Text);
+            string nombre = NombreText.Text;
+            string telefono = TelefonoText.Text;
+            int socioDeCoop = int.Parse(SocioDeCoop.SelectedItem.GetType()
+                .GetProperty("Value").GetValue(SocioDeCoop.SelectedItem, null).ToString());
+            var conexion = new Conexion();
+            conexion.AgregarCliente(dni,nombre,telefono,socioDeCoop);
             MessageBox.Show("El Cliente se agrego correctamente a la lista");
-        }
-
-        private void SocioDeCoop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show($"lo que muestra el combo es: {SocioDeCoop.SelectedItem.GetType().GetProperty("Text").GetValue(SocioDeCoop.SelectedItem, null)} y " +
-                       $"en la base de datos se va a guardar {SocioDeCoop.SelectedItem.GetType().GetProperty("Value").GetValue(SocioDeCoop.SelectedItem, null)}");
         }
 
         private void Volver_Click(object sender, EventArgs e)
