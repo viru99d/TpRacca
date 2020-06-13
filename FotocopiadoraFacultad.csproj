@@ -62,6 +62,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RegistroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroClientes.Designer.cs">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="registrarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistroClientes.resx">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsc">
       <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
     </None>

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace FotocopiadoraFacultad
 {
     public partial class Inicio : Form
@@ -16,6 +15,21 @@ namespace FotocopiadoraFacultad
         public Inicio()
         {
             InitializeComponent();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection Con = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
+                Con.Open();
+                MessageBox.Show("Se ha conectado correctamente a la base de datos");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
+            }
         }
 
         private void Nombre_LostFocus(object sender, EventArgs e)
@@ -38,7 +52,14 @@ namespace FotocopiadoraFacultad
             }
             else
             {
-                errorProvider1.SetError(Nombre, "El usuario es incorrecto");
+                if (string.IsNullOrWhiteSpace(Nombre.Text))
+                {
+                    errorProvider1.SetError(Nombre, "Debe introducir el usuario");
+                }
+                else
+                {
+                    errorProvider1.SetError(Nombre, "El usuario es incorrecto");
+                }
                 inicioSesión.Enabled = false;
                 Nombre.Focus();
             }
@@ -53,7 +74,14 @@ namespace FotocopiadoraFacultad
             }
             else
             {
-                errorProvider2.SetError(Contraseña, "La contraseña es incorrecta");
+                if (string.IsNullOrWhiteSpace(Contraseña.Text))
+                {
+                    errorProvider2.SetError(Contraseña, "Debe introducir la contraseña");
+                }
+                else
+                {
+                    errorProvider2.SetError(Nombre, "La contraseña es incorrecta");
+                }
                 inicioSesión.Enabled = false;
                 Contraseña.Focus();
             }
