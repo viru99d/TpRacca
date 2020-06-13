@@ -17,6 +17,11 @@ namespace FotocopiadoraFacultad
             InitializeComponent();
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+           
+        }
+
         private void Nombre_LostFocus(object sender, EventArgs e)
         {
             controlBotonNombre();
