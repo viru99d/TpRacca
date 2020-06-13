@@ -62,6 +62,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
