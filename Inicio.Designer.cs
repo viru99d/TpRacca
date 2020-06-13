@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnInicio = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,22 +58,11 @@
             this.label1.Text = "CONTROL DE PEDIDOS WADSCOPY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnInicio
-            // 
-            this.btnInicio.Location = new System.Drawing.Point(335, 156);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(123, 38);
-            this.btnInicio.TabIndex = 1;
-            this.btnInicio.Text = "Conectar BD";
-            this.btnInicio.UseVisualStyleBackColor = true;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(223, 214);
+            this.label2.Location = new System.Drawing.Point(223, 201);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 25);
@@ -83,7 +71,7 @@
             // 
             // Nombre
             // 
-            this.Nombre.Location = new System.Drawing.Point(335, 217);
+            this.Nombre.Location = new System.Drawing.Point(335, 204);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(188, 22);
             this.Nombre.TabIndex = 3;
@@ -93,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 280);
+            this.label3.Location = new System.Drawing.Point(179, 267);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 25);
@@ -102,7 +90,7 @@
             // 
             // Contraseña
             // 
-            this.Contraseña.Location = new System.Drawing.Point(335, 283);
+            this.Contraseña.Location = new System.Drawing.Point(335, 270);
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.Size = new System.Drawing.Size(188, 22);
             this.Contraseña.TabIndex = 5;
@@ -110,7 +98,7 @@
             // 
             // inicioSesión
             // 
-            this.inicioSesión.Location = new System.Drawing.Point(335, 329);
+            this.inicioSesión.Location = new System.Drawing.Point(335, 316);
             this.inicioSesión.Name = "inicioSesión";
             this.inicioSesión.Size = new System.Drawing.Size(123, 38);
             this.inicioSesión.TabIndex = 6;
@@ -129,7 +117,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FotocopiadoraFacultad.Properties.Resources.copiadora_profesional_oficina_documentos_papel_impresion_impresora_multifuncionales_aislo_ejemplo_vector_maquina_impresora_copiadora_trabajo_oficina_53562_6147__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(529, 140);
+            this.pictureBox1.Location = new System.Drawing.Point(529, 127);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 256);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,7 +147,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -167,8 +154,8 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimizeBox = false;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servicio de fotocopias";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -180,7 +167,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.Label label3;

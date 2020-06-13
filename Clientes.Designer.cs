@@ -35,9 +35,10 @@
             // 
             // RegistroCliente
             // 
-            this.RegistroCliente.Location = new System.Drawing.Point(301, 185);
+            this.RegistroCliente.Location = new System.Drawing.Point(301, 176);
+            this.RegistroCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RegistroCliente.Name = "RegistroCliente";
-            this.RegistroCliente.Size = new System.Drawing.Size(166, 54);
+            this.RegistroCliente.Size = new System.Drawing.Size(221, 66);
             this.RegistroCliente.TabIndex = 3;
             this.RegistroCliente.Text = "REGISTRAR CLIENTE";
             this.RegistroCliente.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(41, 363);
+            this.Volver.Location = new System.Drawing.Point(13, 382);
+            this.Volver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(166, 54);
+            this.Volver.Size = new System.Drawing.Size(221, 66);
             this.Volver.TabIndex = 4;
             this.Volver.Text = "VOLVER";
             this.Volver.UseVisualStyleBackColor = true;
@@ -55,15 +57,17 @@
             // 
             // Clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.RegistroCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.ResumeLayout(false);
 

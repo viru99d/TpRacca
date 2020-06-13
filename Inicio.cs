@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace FotocopiadoraFacultad
 {
@@ -16,28 +15,6 @@ namespace FotocopiadoraFacultad
         public Inicio()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        
-        private void btnInicio_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection Con = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
-                Con.Open();
-                MessageBox.Show("Se ha conectado correctamente a la base de datos");
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
-            }
         }
 
         private void Nombre_LostFocus(object sender, EventArgs e)
@@ -92,5 +69,6 @@ namespace FotocopiadoraFacultad
         {
             this.Close();
         }
+
     }
 }
