@@ -24,7 +24,8 @@ namespace FotocopiadoraFacultad
 
         private void RegistroCliente_Click(object sender, EventArgs e)
         {
-
+            using (RegistroClientes ventanaRegistroClientes = new RegistroClientes())
+                ventanaRegistroClientes.ShowDialog();
         }
     }
 }

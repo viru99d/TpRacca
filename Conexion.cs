@@ -12,9 +12,9 @@ namespace FotocopiadoraFacultad
 {
     class Conexion
     {
-        SqlConnection cnn;
-        SqlCommand cmd;
-        SqlDataReader dr;
+        public SqlConnection cnn { get; set; }
+        public SqlCommand cmd { get; set; }
+        public SqlDataReader dr { get; set; }
 
         public Conexion()
         {
