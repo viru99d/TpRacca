@@ -19,17 +19,7 @@ namespace FotocopiadoraFacultad
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection Con = new SqlConnection("Data Source =.; Initial Catalog = Control de Pedidos Fotocopiadora UTN; Integrated Security = True");
-                Con.Open();
-                MessageBox.Show("Se ha conectado correctamente a la base de datos");
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Ocurrio un error, no se puedo conectar a la base de datos " + error.Message);
-            }
+           
         }
 
         private void Nombre_LostFocus(object sender, EventArgs e)
