@@ -37,7 +37,14 @@ namespace FotocopiadoraFacultad
             }
             else
             {
-                errorProvider1.SetError(Nombre, "El usuario es incorrecto");
+                if (string.IsNullOrWhiteSpace(Nombre.Text))
+                {
+                    errorProvider1.SetError(Nombre, "Debe introducir el usuario");
+                }
+                else
+                {
+                    errorProvider1.SetError(Nombre, "El usuario es incorrecto");
+                }
                 inicioSesión.Enabled = false;
                 Nombre.Focus();
             }
@@ -52,7 +59,14 @@ namespace FotocopiadoraFacultad
             }
             else
             {
-                errorProvider2.SetError(Contraseña, "La contraseña es incorrecta");
+                if (string.IsNullOrWhiteSpace(Contraseña.Text))
+                {
+                    errorProvider2.SetError(Contraseña, "Debe introducir la contraseña");
+                }
+                else
+                {
+                    errorProvider2.SetError(Nombre, "La contraseña es incorrecta");
+                }
                 inicioSesión.Enabled = false;
                 Contraseña.Focus();
             }
