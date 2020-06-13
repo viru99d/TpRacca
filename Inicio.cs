@@ -89,9 +89,5 @@ namespace FotocopiadoraFacultad
             this.Close();
         }
 
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

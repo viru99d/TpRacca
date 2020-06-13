@@ -62,11 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Control_de_Pedidos_Fotocopiadora_UTNDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MuestraDeClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MuestraDeClientes.Designer.cs">
+      <DependentUpon>MuestraDeClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistroClientes.cs">
       <SubType>Form</SubType>
@@ -103,6 +103,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuestraDeClientes.resx">
+      <DependentUpon>MuestraDeClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registrarPedido.resx">
       <DependentUpon>registrarPedido.cs</DependentUpon>
