@@ -36,9 +36,10 @@
             // 
             // Clientes
             // 
-            this.Clientes.Location = new System.Drawing.Point(294, 120);
+            this.Clientes.Location = new System.Drawing.Point(304, 134);
+            this.Clientes.Margin = new System.Windows.Forms.Padding(4);
             this.Clientes.Name = "Clientes";
-            this.Clientes.Size = new System.Drawing.Size(166, 54);
+            this.Clientes.Size = new System.Drawing.Size(221, 66);
             this.Clientes.TabIndex = 0;
             this.Clientes.Text = "CLIENTES";
             this.Clientes.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // Pedidos
             // 
-            this.Pedidos.Location = new System.Drawing.Point(294, 205);
+            this.Pedidos.Location = new System.Drawing.Point(304, 238);
+            this.Pedidos.Margin = new System.Windows.Forms.Padding(4);
             this.Pedidos.Name = "Pedidos";
-            this.Pedidos.Size = new System.Drawing.Size(166, 54);
+            this.Pedidos.Size = new System.Drawing.Size(221, 66);
             this.Pedidos.TabIndex = 1;
             this.Pedidos.Text = "PEDIDOS";
             this.Pedidos.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(12, 384);
+            this.Volver.Location = new System.Drawing.Point(13, 382);
+            this.Volver.Margin = new System.Windows.Forms.Padding(4);
             this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(166, 54);
+            this.Volver.Size = new System.Drawing.Size(221, 66);
             this.Volver.TabIndex = 2;
             this.Volver.Text = "VOLVER";
             this.Volver.UseVisualStyleBackColor = true;
@@ -66,15 +69,17 @@
             // 
             // InicioDos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.Pedidos);
             this.Controls.Add(this.Clientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InicioDos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servicio de Fotocopias";
             this.ResumeLayout(false);
 

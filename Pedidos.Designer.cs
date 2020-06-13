@@ -34,8 +34,8 @@
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(39, 473);
-            this.Volver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Volver.Location = new System.Drawing.Point(13, 382);
+            this.Volver.Margin = new System.Windows.Forms.Padding(4);
             this.Volver.Name = "Volver";
             this.Volver.Size = new System.Drawing.Size(221, 66);
             this.Volver.TabIndex = 3;
@@ -45,8 +45,8 @@
             // 
             // RegistroPedidos
             // 
-            this.RegistroPedidos.Location = new System.Drawing.Point(415, 132);
-            this.RegistroPedidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RegistroPedidos.Location = new System.Drawing.Point(298, 180);
+            this.RegistroPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.RegistroPedidos.Name = "RegistroPedidos";
             this.RegistroPedidos.Size = new System.Drawing.Size(221, 66);
             this.RegistroPedidos.TabIndex = 4;
@@ -59,12 +59,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.RegistroPedidos);
             this.Controls.Add(this.Volver);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";
             this.ResumeLayout(false);
 
