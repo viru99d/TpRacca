@@ -30,14 +30,14 @@
         {
             this.Volver = new System.Windows.Forms.Button();
             this.RegistroPedidos = new System.Windows.Forms.Button();
+            this.MostrarPedidos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(13, 382);
-            this.Volver.Margin = new System.Windows.Forms.Padding(4);
+            this.Volver.Location = new System.Drawing.Point(10, 310);
             this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(221, 66);
+            this.Volver.Size = new System.Drawing.Size(166, 54);
             this.Volver.TabIndex = 3;
             this.Volver.Text = "VOLVER";
             this.Volver.UseVisualStyleBackColor = true;
@@ -45,25 +45,34 @@
             // 
             // RegistroPedidos
             // 
-            this.RegistroPedidos.Location = new System.Drawing.Point(298, 180);
-            this.RegistroPedidos.Margin = new System.Windows.Forms.Padding(4);
+            this.RegistroPedidos.Location = new System.Drawing.Point(217, 89);
             this.RegistroPedidos.Name = "RegistroPedidos";
-            this.RegistroPedidos.Size = new System.Drawing.Size(221, 66);
+            this.RegistroPedidos.Size = new System.Drawing.Size(166, 54);
             this.RegistroPedidos.TabIndex = 4;
-            this.RegistroPedidos.Text = "Registrar Pedidos";
+            this.RegistroPedidos.Text = "REGISTRAR PEDIDOS";
             this.RegistroPedidos.UseVisualStyleBackColor = true;
             this.RegistroPedidos.Click += new System.EventHandler(this.RegistroPedidos_Click);
             // 
+            // MostrarPedidos
+            // 
+            this.MostrarPedidos.Location = new System.Drawing.Point(217, 187);
+            this.MostrarPedidos.Name = "MostrarPedidos";
+            this.MostrarPedidos.Size = new System.Drawing.Size(166, 54);
+            this.MostrarPedidos.TabIndex = 5;
+            this.MostrarPedidos.Text = "VER PEDIDOS";
+            this.MostrarPedidos.UseVisualStyleBackColor = true;
+            this.MostrarPedidos.Click += new System.EventHandler(this.MostrarPedidos_Click);
+            // 
             // Pedidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(804, 461);
+            this.ClientSize = new System.Drawing.Size(603, 375);
+            this.Controls.Add(this.MostrarPedidos);
             this.Controls.Add(this.RegistroPedidos);
             this.Controls.Add(this.Volver);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";
@@ -75,5 +84,6 @@
 
         private System.Windows.Forms.Button Volver;
         private System.Windows.Forms.Button RegistroPedidos;
+        private System.Windows.Forms.Button MostrarPedidos;
     }
 }

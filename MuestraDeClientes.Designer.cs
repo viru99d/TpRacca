@@ -32,23 +32,32 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Buscar = new System.Windows.Forms.Button();
             this.Volver = new System.Windows.Forms.Button();
+            this.checkBoxNombre = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.checkBoxId = new System.Windows.Forms.CheckBox();
+            this.textBoxTelefono = new System.Windows.Forms.TextBox();
+            this.checkBoxTelefono = new System.Windows.Forms.CheckBox();
+            this.checkBoxSocioDeCoop = new System.Windows.Forms.CheckBox();
+            this.comboBoxSocio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 140);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(753, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(765, 244);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Buscar
             // 
-            this.Buscar.Location = new System.Drawing.Point(610, 376);
+            this.Buscar.Location = new System.Drawing.Point(653, 390);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(133, 48);
+            this.Buscar.Size = new System.Drawing.Size(104, 34);
             this.Buscar.TabIndex = 1;
             this.Buscar.Text = "BUSCAR";
             this.Buscar.UseVisualStyleBackColor = true;
@@ -56,27 +65,129 @@
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(75, 376);
+            this.Volver.Location = new System.Drawing.Point(60, 390);
             this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(133, 48);
+            this.Volver.Size = new System.Drawing.Size(104, 34);
             this.Volver.TabIndex = 2;
             this.Volver.Text = "VOLVER";
             this.Volver.UseVisualStyleBackColor = true;
             this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
+            // checkBoxNombre
+            // 
+            this.checkBoxNombre.AutoSize = true;
+            this.checkBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNombre.Location = new System.Drawing.Point(231, 77);
+            this.checkBoxNombre.Name = "checkBoxNombre";
+            this.checkBoxNombre.Size = new System.Drawing.Size(76, 20);
+            this.checkBoxNombre.TabIndex = 3;
+            this.checkBoxNombre.Text = "Nombre";
+            this.checkBoxNombre.UseVisualStyleBackColor = true;
+            this.checkBoxNombre.CheckedChanged += new System.EventHandler(this.checkBoxNombre_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 26);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "FILTRAR POR:";
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(231, 104);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNombre.TabIndex = 5;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
+            // 
+            // textBoxId
+            // 
+            this.textBoxId.Location = new System.Drawing.Point(82, 104);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxId.TabIndex = 7;
+            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
+            // 
+            // checkBoxId
+            // 
+            this.checkBoxId.AutoSize = true;
+            this.checkBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxId.Location = new System.Drawing.Point(82, 77);
+            this.checkBoxId.Name = "checkBoxId";
+            this.checkBoxId.Size = new System.Drawing.Size(50, 20);
+            this.checkBoxId.TabIndex = 6;
+            this.checkBoxId.Text = "DNI";
+            this.checkBoxId.UseVisualStyleBackColor = true;
+            this.checkBoxId.CheckedChanged += new System.EventHandler(this.checkBoxId_CheckedChanged);
+            // 
+            // textBoxTelefono
+            // 
+            this.textBoxTelefono.Location = new System.Drawing.Point(392, 104);
+            this.textBoxTelefono.Name = "textBoxTelefono";
+            this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTelefono.TabIndex = 9;
+            this.textBoxTelefono.TextChanged += new System.EventHandler(this.textBoxTelefono_TextChanged);
+            // 
+            // checkBoxTelefono
+            // 
+            this.checkBoxTelefono.AutoSize = true;
+            this.checkBoxTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTelefono.Location = new System.Drawing.Point(392, 77);
+            this.checkBoxTelefono.Name = "checkBoxTelefono";
+            this.checkBoxTelefono.Size = new System.Drawing.Size(81, 20);
+            this.checkBoxTelefono.TabIndex = 8;
+            this.checkBoxTelefono.Text = "Telefono";
+            this.checkBoxTelefono.UseVisualStyleBackColor = true;
+            this.checkBoxTelefono.CheckedChanged += new System.EventHandler(this.checkBoxTelefono_CheckedChanged);
+            // 
+            // checkBoxSocioDeCoop
+            // 
+            this.checkBoxSocioDeCoop.AutoSize = true;
+            this.checkBoxSocioDeCoop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxSocioDeCoop.Location = new System.Drawing.Point(572, 77);
+            this.checkBoxSocioDeCoop.Name = "checkBoxSocioDeCoop";
+            this.checkBoxSocioDeCoop.Size = new System.Drawing.Size(167, 20);
+            this.checkBoxSocioDeCoop.TabIndex = 10;
+            this.checkBoxSocioDeCoop.Text = "Socio De Cooperadora";
+            this.checkBoxSocioDeCoop.UseVisualStyleBackColor = true;
+            this.checkBoxSocioDeCoop.CheckedChanged += new System.EventHandler(this.checkBoxSocioDeCoop_CheckedChanged);
+            // 
+            // comboBoxSocio
+            // 
+            this.comboBoxSocio.FormattingEnabled = true;
+            this.comboBoxSocio.Location = new System.Drawing.Point(572, 104);
+            this.comboBoxSocio.Name = "comboBoxSocio";
+            this.comboBoxSocio.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxSocio.TabIndex = 11;
+            this.comboBoxSocio.SelectedIndexChanged += new System.EventHandler(this.comboBoxSocio_SelectedIndexChanged);
+            // 
             // MuestraDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(809, 450);
+            this.Controls.Add(this.comboBoxSocio);
+            this.Controls.Add(this.checkBoxSocioDeCoop);
+            this.Controls.Add(this.textBoxTelefono);
+            this.Controls.Add(this.checkBoxTelefono);
+            this.Controls.Add(this.textBoxId);
+            this.Controls.Add(this.checkBoxId);
+            this.Controls.Add(this.textBoxNombre);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.checkBoxNombre);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.Buscar);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuestraDeClientes";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.MuestraDeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,5 +196,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Buscar;
         private System.Windows.Forms.Button Volver;
+        private System.Windows.Forms.CheckBox checkBoxNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.CheckBox checkBoxId;
+        private System.Windows.Forms.TextBox textBoxTelefono;
+        private System.Windows.Forms.CheckBox checkBoxTelefono;
+        private System.Windows.Forms.CheckBox checkBoxSocioDeCoop;
+        private System.Windows.Forms.ComboBox comboBoxSocio;
     }
 }

@@ -29,5 +29,13 @@ namespace FotocopiadoraFacultad
                 ventanaRegistrarPedidos.ShowDialog();
             }
         }
+
+        private void MostrarPedidos_Click(object sender, EventArgs e)
+        {
+            using (MuestraDePedidos ventanaMuestraDePedidos = new MuestraDePedidos())
+            {
+                ventanaMuestraDePedidos.ShowDialog();
+            }
+        }
     }
 }

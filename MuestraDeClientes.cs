@@ -40,5 +40,50 @@ namespace FotocopiadoraFacultad
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = ds.Tables[0];
         }
+
+        private void checkBoxNombre_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MuestraDeClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxId_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxTelefono_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxSocioDeCoop_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxSocio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
