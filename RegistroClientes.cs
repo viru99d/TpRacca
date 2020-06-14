@@ -59,6 +59,11 @@ namespace FotocopiadoraFacultad
         {
             this.Close();
         }
+
+        private void SocioDeCoop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

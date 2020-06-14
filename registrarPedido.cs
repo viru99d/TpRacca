@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace FotocopiadoraFacultad
 {
@@ -27,28 +28,29 @@ namespace FotocopiadoraFacultad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dtgvPedidos.Rows.Add();
-            int cantFilas = dtgvPedidos.Rows.Count - 1;
+            //ComboBPedido.Text + ",'" + NombreText.Text + "'," + TelefonoText.Text + ",'" + SocioDeCoop.Text;
+            int i = 1;
+            int pedido = i;
             DateTime fecha = DateTime.Now;
+            int universidad = int.Parse(comboBPedido.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboBPedido.SelectedItem, null).ToString());
+            int carrera = int.Parse(comboCarrera.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboCarrera.SelectedItem, null).ToString());
+            int cliente = int.Parse(comboCliente.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
+            int apunte = int.Parse(comboApunte.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboApunte.SelectedItem, null).ToString());
+            int anillado = int.Parse(comboAnillado.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboAnillado.SelectedItem, null).ToString());
+            int precio = int.Parse(comboPrecio.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+            int estado = int.Parse(comboEstado.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboEstado.SelectedItem, null).ToString());
+            i++;
 
-            dtgvPedidos[0, cantFilas].Value = cantFilas+1;
-
-            dtgvPedidos[1, cantFilas].Value = fecha;
-
-            dtgvPedidos[2, cantFilas].Value = 1;
-
-             
-         
-
-            /*int cantFilas = dtgvPedidos.Rows.Count - 1;
-
-            dtgvPedidos[3, cantFilas].Value = codigoMateria.ToString();
-            dtgvPedidos[4, cantFilas].Value = codigoCarrera.ToString();
-            dtgvPedidos[5, cantFilas].Value = codigoCliente.ToString();
-            dtgvPedidos[6, cantFilas].Value = codigoApunte.ToString();
-            dtgvPedidos[7, cantFilas].Value = Encuadernillado.ToString();
-            dtgvPedidos[8, cantFilas].Value = precioTotal.ToString();
-            dtgvPedidos[9, cantFilas].Value = estado.ToString();*/
+            var conexion = new Conexion();
+            conexion.AgregarPedido(pedido, fecha, universidad, carrera, cliente, apunte, anillado, precio, estado);
+            MessageBox.Show("El Cliente se agrego correctamente a la lista");
         }
 
         private void registrarPedido_Load(object sender, EventArgs e)

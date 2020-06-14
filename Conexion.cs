@@ -102,5 +102,22 @@ namespace FotocopiadoraFacultad
                 cnn.Close();
             }
         }
+
+        public void AgregarPedido(int pedido, DateTime fecha, int universidad, int carrera, int cliente, int apunte, int anillado, int precio, int estado)
+        {
+            try
+            {
+                string Cadena = $"Insert into Cliente(IdPedido, Fecha, codigoUniversdad, codigoCarrera, codigoCliente, codigoApunte, Encuadernillado, PrecioTotal, Estado) values('{pedido}','{fecha}', '{universidad}','{carrera}','{cliente}', '{apunte}', '{anillado}', '{precio}', '{estado}');";
+                cnn.Open();
+                cmd = new SqlCommand(Cadena, cnn);
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo agregar el pedido");
+                cnn.Close();
+            }
+        }
     }
 }

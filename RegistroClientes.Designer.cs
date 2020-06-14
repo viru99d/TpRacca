@@ -113,7 +113,7 @@
             this.SocioDeCoop.Name = "SocioDeCoop";
             this.SocioDeCoop.Size = new System.Drawing.Size(206, 21);
             this.SocioDeCoop.TabIndex = 7;
-            
+            this.SocioDeCoop.SelectedIndexChanged += new System.EventHandler(this.SocioDeCoop_SelectedIndexChanged);
             // 
             // Titulo
             // 
