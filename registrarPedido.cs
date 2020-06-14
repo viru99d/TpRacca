@@ -18,6 +18,31 @@ namespace FotocopiadoraFacultad
         public registrarPedido()
         {
             InitializeComponent();
+
+            comboAnillado.DisplayMember = "Text";
+            comboAnillado.ValueMember = "Value";
+
+            var items = new[]
+            {
+                new { Text = "SI", Value = 1 },
+                new { Text = "NO", Value = 2 }
+            };
+
+            comboAnillado.DataSource = items;
+
+            comboEstado.DisplayMember = "Text";
+            comboEstado.ValueMember = "Value";
+
+            var items2 = new[]
+            {
+                new { Text = "REALIZADO", Value = 1 },
+                new { Text = "PENDIENTE", Value = 2 },
+                new { Text = "ENTREGADO", Value = 3 },
+
+            };
+
+            comboEstado.DataSource = items2;
+
         }
 
 
@@ -28,7 +53,7 @@ namespace FotocopiadoraFacultad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //ComboBPedido.Text + ",'" + NombreText.Text + "'," + TelefonoText.Text + ",'" + SocioDeCoop.Text;
+            
             int i = 1;
             int pedido = i;
             DateTime fecha = DateTime.Now;
@@ -42,8 +67,9 @@ namespace FotocopiadoraFacultad
                .GetProperty("Value").GetValue(comboApunte.SelectedItem, null).ToString());
             int anillado = int.Parse(comboAnillado.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboAnillado.SelectedItem, null).ToString());
-            int precio = int.Parse(comboPrecio.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+
+            int precio = 1;
+
             int estado = int.Parse(comboEstado.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboEstado.SelectedItem, null).ToString());
             i++;
