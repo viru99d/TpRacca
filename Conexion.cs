@@ -33,6 +33,7 @@ namespace FotocopiadoraFacultad
                 while (dr.Read())
                 {
                     cb.Items.Add(dr["Nombre"].ToString());
+                    //cb.Items.Add(dr["IdUniversidad"].ToString());
                 }
                 cb.SelectedIndex = 0;
                 dr.Close();
@@ -54,6 +55,7 @@ namespace FotocopiadoraFacultad
                 while (dr.Read())
                 {
                     cc.Items.Add(dr["Nombre"].ToString());
+                    //cc.Items.Add(dr["IdMateria"].ToString());
                 }
                 cc.SelectedIndex = 0;
                 dr.Close();
@@ -75,6 +77,7 @@ namespace FotocopiadoraFacultad
                 while (dr.Read())
                 {
                     cd.Items.Add(dr["Nombre"].ToString());
+                    //cd.Items.Add(dr["IdCarrera"].ToString());
                 }
                 cd.SelectedIndex = 0;
                 dr.Close();
