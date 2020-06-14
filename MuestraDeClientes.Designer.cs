@@ -83,7 +83,6 @@
             this.checkBoxNombre.TabIndex = 3;
             this.checkBoxNombre.Text = "Nombre";
             this.checkBoxNombre.UseVisualStyleBackColor = true;
-            this.checkBoxNombre.CheckedChanged += new System.EventHandler(this.checkBoxNombre_CheckedChanged);
             // 
             // label1
             // 
@@ -101,7 +100,6 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombre.TabIndex = 5;
-            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // textBoxId
             // 
@@ -109,7 +107,6 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(100, 20);
             this.textBoxId.TabIndex = 7;
-            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
             // checkBoxId
             // 
@@ -121,7 +118,6 @@
             this.checkBoxId.TabIndex = 6;
             this.checkBoxId.Text = "DNI";
             this.checkBoxId.UseVisualStyleBackColor = true;
-            this.checkBoxId.CheckedChanged += new System.EventHandler(this.checkBoxId_CheckedChanged);
             // 
             // textBoxTelefono
             // 
@@ -129,7 +125,6 @@
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
             this.textBoxTelefono.TabIndex = 9;
-            this.textBoxTelefono.TextChanged += new System.EventHandler(this.textBoxTelefono_TextChanged);
             // 
             // checkBoxTelefono
             // 
@@ -141,7 +136,6 @@
             this.checkBoxTelefono.TabIndex = 8;
             this.checkBoxTelefono.Text = "Telefono";
             this.checkBoxTelefono.UseVisualStyleBackColor = true;
-            this.checkBoxTelefono.CheckedChanged += new System.EventHandler(this.checkBoxTelefono_CheckedChanged);
             // 
             // checkBoxSocioDeCoop
             // 
@@ -153,21 +147,20 @@
             this.checkBoxSocioDeCoop.TabIndex = 10;
             this.checkBoxSocioDeCoop.Text = "Socio De Cooperadora";
             this.checkBoxSocioDeCoop.UseVisualStyleBackColor = true;
-            this.checkBoxSocioDeCoop.CheckedChanged += new System.EventHandler(this.checkBoxSocioDeCoop_CheckedChanged);
             // 
             // comboBoxSocio
             // 
             this.comboBoxSocio.FormattingEnabled = true;
             this.comboBoxSocio.Location = new System.Drawing.Point(572, 104);
             this.comboBoxSocio.Name = "comboBoxSocio";
-            this.comboBoxSocio.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxSocio.Size = new System.Drawing.Size(109, 21);
             this.comboBoxSocio.TabIndex = 11;
-            this.comboBoxSocio.SelectedIndexChanged += new System.EventHandler(this.comboBoxSocio_SelectedIndexChanged);
             // 
             // MuestraDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(809, 450);
             this.Controls.Add(this.comboBoxSocio);
             this.Controls.Add(this.checkBoxSocioDeCoop);
@@ -184,7 +177,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuestraDeClientes";
             this.Text = "Clientes";
-            this.Load += new System.EventHandler(this.MuestraDeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

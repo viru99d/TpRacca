@@ -32,8 +32,8 @@ namespace FotocopiadoraFacultad
             int i = 1;
             int pedido = i;
             DateTime fecha = DateTime.Now;
-            int universidad = int.Parse(comboBPedido.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboBPedido.SelectedItem, null).ToString());
+            int universidad = int.Parse(cbxUniversidad.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(cbxUniversidad.SelectedItem, null).ToString());
             int carrera = int.Parse(comboCarrera.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboCarrera.SelectedItem, null).ToString());
             int cliente = int.Parse(comboCliente.SelectedItem.GetType()
@@ -56,9 +56,9 @@ namespace FotocopiadoraFacultad
         private void registrarPedido_Load(object sender, EventArgs e)
         {
             Conexion c = new Conexion();
-            c.llenar(comboBPedido);
-            c.llenar1(comboMateria);
-            c.llenar2(comboCarrera);
+            c.CargarComboUniversidad(cbxUniversidad);
+            //c.llenar1(comboMateria);
+            //c.llenar2(comboCarrera);
 
         }
 
@@ -67,6 +67,16 @@ namespace FotocopiadoraFacultad
 
         }
 
-       
+        private void comboBPedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int universidad = 0;
+            if(cbxUniversidad.SelectedItem != null)
+            {
+                universidad = int.Parse(cbxUniversidad.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(cbxUniversidad.SelectedItem, null).ToString());                             
+            }
+            var conexion = new Conexion();
+            conexion.CargarComboCarrera(universidad, comboCarrera);
+        }
     }
 }

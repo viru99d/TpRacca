@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBPedido = new System.Windows.Forms.ComboBox();
+            this.cbxUniversidad = new System.Windows.Forms.ComboBox();
             this.comboMateria = new System.Windows.Forms.ComboBox();
             this.comboCarrera = new System.Windows.Forms.ComboBox();
             this.comboCliente = new System.Windows.Forms.ComboBox();
@@ -54,17 +54,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.controldePedidosFotocopiadoraUTNDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBPedido
+            // cbxUniversidad
             // 
-            this.comboBPedido.FormattingEnabled = true;
-            this.comboBPedido.Location = new System.Drawing.Point(294, 65);
-            this.comboBPedido.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBPedido.Name = "comboBPedido";
-            this.comboBPedido.Size = new System.Drawing.Size(147, 21);
-            this.comboBPedido.TabIndex = 1;
+            this.cbxUniversidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxUniversidad.FormattingEnabled = true;
+            this.cbxUniversidad.Location = new System.Drawing.Point(294, 65);
+            this.cbxUniversidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxUniversidad.Name = "cbxUniversidad";
+            this.cbxUniversidad.Size = new System.Drawing.Size(147, 21);
+            this.cbxUniversidad.TabIndex = 1;
+            this.cbxUniversidad.SelectedIndexChanged += new System.EventHandler(this.comboBPedido_SelectedIndexChanged);
             // 
             // comboMateria
             // 
+            this.comboMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMateria.FormattingEnabled = true;
             this.comboMateria.Location = new System.Drawing.Point(294, 134);
             this.comboMateria.Margin = new System.Windows.Forms.Padding(2);
@@ -74,6 +77,7 @@
             // 
             // comboCarrera
             // 
+            this.comboCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCarrera.FormattingEnabled = true;
             this.comboCarrera.Location = new System.Drawing.Point(294, 98);
             this.comboCarrera.Margin = new System.Windows.Forms.Padding(2);
@@ -83,6 +87,7 @@
             // 
             // comboCliente
             // 
+            this.comboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCliente.FormattingEnabled = true;
             this.comboCliente.Location = new System.Drawing.Point(294, 169);
             this.comboCliente.Margin = new System.Windows.Forms.Padding(2);
@@ -92,6 +97,7 @@
             // 
             // comboApunte
             // 
+            this.comboApunte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboApunte.FormattingEnabled = true;
             this.comboApunte.Location = new System.Drawing.Point(294, 204);
             this.comboApunte.Margin = new System.Windows.Forms.Padding(2);
@@ -101,6 +107,7 @@
             // 
             // comboPrecio
             // 
+            this.comboPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPrecio.FormattingEnabled = true;
             this.comboPrecio.Location = new System.Drawing.Point(294, 284);
             this.comboPrecio.Margin = new System.Windows.Forms.Padding(2);
@@ -110,6 +117,7 @@
             // 
             // comboAnillado
             // 
+            this.comboAnillado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAnillado.FormattingEnabled = true;
             this.comboAnillado.Location = new System.Drawing.Point(294, 242);
             this.comboAnillado.Margin = new System.Windows.Forms.Padding(2);
@@ -119,6 +127,7 @@
             // 
             // comboEstado
             // 
+            this.comboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEstado.FormattingEnabled = true;
             this.comboEstado.Location = new System.Drawing.Point(294, 319);
             this.comboEstado.Margin = new System.Windows.Forms.Padding(2);
@@ -278,7 +287,7 @@
             this.Controls.Add(this.comboCliente);
             this.Controls.Add(this.comboCarrera);
             this.Controls.Add(this.comboMateria);
-            this.Controls.Add(this.comboBPedido);
+            this.Controls.Add(this.cbxUniversidad);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "registrarPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -292,7 +301,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBPedido;
+        private System.Windows.Forms.ComboBox cbxUniversidad;
         private System.Windows.Forms.ComboBox comboMateria;
         private System.Windows.Forms.ComboBox comboCarrera;
         private System.Windows.Forms.ComboBox comboCliente;

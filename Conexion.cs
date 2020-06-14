@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -23,24 +25,30 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void llenar(ComboBox cb)
+        public void CargarComboUniversidad(ComboBox cb)
         {
             try
             {
+                string query = $"Select Nombre, IdUniversidad from Universidad";
                 cnn.Open();
-                cmd = new SqlCommand("Select Nombre from Universidad", cnn);
+                cmd = new SqlCommand(query, cnn);
                 dr = cmd.ExecuteReader();
+                cb.DisplayMember = "Text";
+                cb.ValueMember = "Value";
+                var listaUniversidad = new List<dynamic>();                
                 while (dr.Read())
                 {
-                    cb.Items.Add(dr["Nombre"].ToString());
-                }
-                cb.SelectedIndex = 0;
+                    listaUniversidad.Add(new { Text = dr["Nombre"].ToString(), Value = dr["IdUniversidad"].ToString() });
+                }                
+                cb.DataSource = listaUniversidad;
+                cb.SelectedIndex = -1;
                 dr.Close();
-                cnn.Close();
+                cnn.Close();                
             }
             catch (Exception error)
             {
                 MessageBox.Show("No se llenó el casillero: " + error.ToString());
+                cnn.Close();
             }
         }
 
@@ -55,7 +63,7 @@ namespace FotocopiadoraFacultad
                 {
                     cc.Items.Add(dr["Nombre"].ToString());
                 }
-                cc.SelectedIndex = 0;
+                cc.SelectedIndex = -1;
                 dr.Close();
                 cnn.Close();
             }
@@ -76,7 +84,7 @@ namespace FotocopiadoraFacultad
                 {
                     cd.Items.Add(dr["Nombre"].ToString());
                 }
-                cd.SelectedIndex = 0;
+                cd.SelectedIndex = -1;
                 dr.Close();
                 cnn.Close();
             }
@@ -112,11 +120,45 @@ namespace FotocopiadoraFacultad
                 cmd = new SqlCommand(Cadena, cnn);
                 cmd.ExecuteNonQuery();
                 cnn.Close();
+                MessageBox.Show("El Cliente se agrego correctamente a la lista");
             }
             catch (Exception)
             {
                 MessageBox.Show("No se pudo agregar el pedido");
                 cnn.Close();
+            }
+        }
+
+        public void CargarComboCarrera(int idUniversidad, ComboBox combo)
+        {
+            try
+            {
+                string query = $"Select Nombre, IdCarrera from Carrera where CodigoUniversidad = {idUniversidad}";
+                cnn.Open();
+                cmd = new SqlCommand(query, cnn);
+                dr = cmd.ExecuteReader();
+                combo.DisplayMember = "Text";
+                combo.ValueMember = "Value";
+                var listaCarrera = new List<dynamic>();
+                while (dr.Read())
+                {
+                    listaCarrera.Add(new { Text = dr["Nombre"].ToString(), Value = dr["IdCarrera"].ToString() });
+                }
+                if(listaCarrera.Count > 0)
+                {
+                    combo.DataSource = listaCarrera;
+                }
+                else
+                {
+                    combo.DataSource = null;
+                }              
+                combo.SelectedIndex = -1;
+                dr.Close();
+                cnn.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se llenó el casillero: " + error.ToString());
             }
         }
     }

@@ -52,7 +52,6 @@ namespace FotocopiadoraFacultad
                 .GetProperty("Value").GetValue(SocioDeCoop.SelectedItem, null).ToString());
             var conexion = new Conexion();
             conexion.AgregarCliente(dni,nombre,telefono,socioDeCoop);
-            MessageBox.Show("El Cliente se agrego correctamente a la lista");
         }
 
         private void Volver_Click(object sender, EventArgs e)
