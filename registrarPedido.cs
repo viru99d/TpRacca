@@ -132,6 +132,7 @@ namespace FotocopiadoraFacultad
             }
             var conexion = new Conexion();
             
+            
         }
 
         private void comboAnillado_SelectedIndexChanged(object sender, EventArgs e)

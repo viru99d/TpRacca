@@ -125,7 +125,7 @@ namespace FotocopiadoraFacultad
         {
             try
             {
-                string query = $"Select Nombre, IdMateria from CarreraMateria inner join Materia on CarreraMateria.IdMateria = Materia.IdMateria where codigoCarrera = {idCarrera}";
+                string query = $"Select Nombre, IdMateria From Asignacion join Materia on Asignacion.CodigoMateria = Materia.IdMateria where CodigoCarrera ={idCarrera }";
                 cnn.Open();
                 cmd = new SqlCommand(query, cnn);
                 dr = cmd.ExecuteReader();
