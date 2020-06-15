@@ -24,7 +24,14 @@ namespace FotocopiadoraFacultad
 
         private void Buscar_Click(object sender, EventArgs e)
         {
+            var conexion = new Conexion();
+            string consulta = "Select * from Pedido ";
+            if (checkBoxFecha.Checked || checkBoxCliente.Checked || checkBoxUniversidad.Checked || checkBoxCarrera.Checked || checkBoxMateria.Checked || checkBoxApunte.Checked || checkBoxEncuadernillado.Checked || checkBoxEstado.Checked)
+            {
+                consulta = consulta + $"where ";
 
+
+            }
         }
 
         private void comboBoxUniversidad_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,7 +43,21 @@ namespace FotocopiadoraFacultad
                     .GetProperty("Value").GetValue(comboBoxUniversidad.SelectedItem, null).ToString());
             }
             var conexion = new Conexion();
-            conexion.CargarComboCarrera(universidad, comboBoxUniversidad);
+            conexion.CargarComboCarrera(universidad, comboBoxCarerra);
         }
+
+        private void comboBoxCarerra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int carrera = 0;
+            if (comboBoxCarerra.SelectedItem != null)
+            {
+                carrera = int.Parse(comboBoxCarerra.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboBoxCarerra.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
+            conexion.CargarComboMateria(carrera, comboBoxMateria);
+        }
+
+
     }
 }

@@ -62,6 +62,7 @@ namespace FotocopiadoraFacultad
                 cmd = new SqlCommand(Cadena, cnn);
                 cmd.ExecuteNonQuery();
                 cnn.Close();
+                MessageBox.Show("El cliente se agregó correctamente");
             }
             catch (Exception)
             {
@@ -80,7 +81,7 @@ namespace FotocopiadoraFacultad
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("El Pedido se cargó correctamente a la base de datos");
                 cnn.Close();
-                
+                MessageBox.Show("El Pedido se agrego correctamente a la lista");
             }
             catch (Exception)
             {

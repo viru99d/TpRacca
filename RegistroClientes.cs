@@ -26,22 +26,6 @@ namespace FotocopiadoraFacultad
 
             SocioDeCoop.DataSource = items;
         }
-
-        private void Idtext_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NombreText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-  
-        private void TelefonoText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Cargar_Click(object sender, EventArgs e)
         {
             //Idtext.Text + ",'" + NombreText.Text + "'," + TelefonoText.Text + ",'" + SocioDeCoop.Text;
@@ -59,10 +43,6 @@ namespace FotocopiadoraFacultad
             this.Close();
         }
 
-        private void SocioDeCoop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
