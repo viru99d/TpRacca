@@ -71,14 +71,15 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void AgregarPedido(int pedido, DateTime fecha, int universidad, int carrera, int materia, int cliente, int apunte, int anillado, int precio, int estado)
+        public void AgregarPedido(int pedido, DateTime fecha, int universidad,int materia, int carrera, int cliente, int apunte, int anillado, int precio, int estado)
         {
             try
             {
-                string Cadena = $"Insert into Cliente(IdPedido, Fecha, codigoUniversdad, codigoCarrera, codigoMateria, codigoCliente, codigoApunte, Encuadernillado, PrecioTotal, Estado) values('{pedido}','{fecha}', '{universidad}','{carrera}','{cliente}', '{apunte}', '{anillado}', '{precio}', '{estado}');";
+                string Cadena = $"Insert into Pedido(IdPedido, Fecha, CodigoUniversidad, CodigoMateria, CodigoCarrera, CodigoCliente, CodigoApunte, Encuadernillado, PrecioTotal, Estado) values('{pedido}','{fecha}', '{universidad}','{materia}','{carrera}','{cliente}', '{apunte}', '{anillado}', '{precio}', '{estado}');";
                 cnn.Open();
                 cmd = new SqlCommand(Cadena, cnn);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("El Pedido se cargó correctamente a la base de datos");
                 cnn.Close();
                 MessageBox.Show("El Pedido se agrego correctamente a la lista");
             }
@@ -146,6 +147,100 @@ namespace FotocopiadoraFacultad
                     combo.DataSource = null;
                 }
                 combo.SelectedIndex = -1;
+                dr.Close();
+                cnn.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se llenó el casillero: " + error.ToString());
+            }
+        }
+
+        public void CargarComboApunte(int idMateria, ComboBox combo)
+        {
+            try
+            {
+                string query = $"Select IdApunte, Precio From Apunte where CodigoMateria ={idMateria }";
+                cnn.Open();
+                cmd = new SqlCommand(query, cnn);
+                dr = cmd.ExecuteReader();
+                combo.DisplayMember = "Text";
+                combo.ValueMember = "Value";
+                var listaApunte = new List<dynamic>();
+                while (dr.Read())
+                {
+                    listaApunte.Add(new { Text = dr["IdApunte"].ToString(), Value = dr["IdApunte"].ToString() });
+                }
+                if (listaApunte.Count > 0)
+                {
+                    combo.DataSource = listaApunte;
+                }
+                else
+                {
+                    combo.DataSource = null;
+                }
+                combo.SelectedIndex = -1;
+                dr.Close();
+                cnn.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se llenó el casillero: " + error.ToString());
+            }
+        }
+
+        public void CargarComboCliente(ComboBox ca)
+        {
+            try
+            {
+                string query = $"Select IdCliente from Cliente";
+                cnn.Open();
+                cmd = new SqlCommand(query, cnn);
+                dr = cmd.ExecuteReader();
+                ca.DisplayMember = "Text";
+                ca.ValueMember = "Value";
+                var listaCliente = new List<dynamic>();
+                while (dr.Read())
+                {
+                    listaCliente.Add(new { Text = dr["IdCliente"].ToString(), Value = dr["IdCliente"].ToString() });
+                }
+                ca.DataSource = listaCliente;
+                ca.SelectedIndex = -1;
+                dr.Close();
+                cnn.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se llenó el casillero: " + error.ToString());
+                cnn.Close();
+            }
+        }
+
+        public void CargarComboPrecio(int idMateria, ComboBox combo)
+        {
+            try
+            {
+                string query = $"Select IdApunte, Precio From Apunte where CodigoMateria ={idMateria}";
+                cnn.Open();
+                cmd = new SqlCommand(query, cnn);
+                dr = cmd.ExecuteReader();
+                combo.DisplayMember = "Text";
+                combo.ValueMember = "Value";
+
+                var listaPrecio = new List<dynamic>();
+                while (dr.Read())
+                {
+                    listaPrecio.Add(new { Text = dr["Precio"].ToString(), Value = dr["Precio"].ToString() });
+                }
+                if (listaPrecio.Count > 0)
+                {
+                    combo.DataSource = listaPrecio;
+                }
+                else
+                {
+                    combo.DataSource = null;
+                }
+               
                 dr.Close();
                 cnn.Close();
             }
