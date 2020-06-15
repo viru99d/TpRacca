@@ -148,6 +148,7 @@
             this.comboBoxMateria.Name = "comboBoxMateria";
             this.comboBoxMateria.Size = new System.Drawing.Size(109, 21);
             this.comboBoxMateria.TabIndex = 21;
+            this.comboBoxMateria.SelectedIndexChanged += new System.EventHandler(this.comboBoxMateria_SelectedIndexChanged);
             // 
             // comboBoxCarerra
             // 
@@ -249,6 +250,7 @@
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(109, 21);
             this.comboBoxCliente.TabIndex = 32;
+            this.comboBoxCliente.SelectedIndexChanged += new System.EventHandler(this.comboBoxCliente_SelectedIndexChanged);
             // 
             // MuestraDePedidos
             // 
