@@ -78,25 +78,19 @@ namespace FotocopiadoraFacultad
             i++;
 
             var conexion = new Conexion();
-            conexion.AgregarPedido(pedido, fecha, universidad, carrera, materia, cliente, apunte, anillado, precio, estado);
-            MessageBox.Show("El Cliente se agrego correctamente a la lista");
+            conexion.AgregarPedido(pedido, fecha, universidad, materia, carrera, cliente, apunte, anillado, precio, estado);
+            
         }
 
         private void registrarPedido_Load(object sender, EventArgs e)
         {
             Conexion c = new Conexion();
             c.CargarComboUniversidad(cbxUniversidad);
-           
-            //c.llenar1(comboMateria);
-            //c.llenar2(comboCarrera);
-
+            c.CargarComboCliente(comboCliente);
+  
         }
 
-        private void dtgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        
         private void comboBPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
             int universidad = 0;
@@ -131,13 +125,33 @@ namespace FotocopiadoraFacultad
                     .GetProperty("Value").GetValue(comboMateria.SelectedItem, null).ToString());
             }
             var conexion = new Conexion();
-            
-            
+            conexion.CargarComboApunte(materia, comboApunte);
+            conexion.CargarComboPrecio(materia, comboPrecio);
         }
 
-        private void comboAnillado_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int cliente = 0;
+            if (comboCliente.SelectedItem != null)
+            {
+                cliente = int.Parse(comboCliente.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
 
         }
+
+        private void comboPrecio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int precio = 0;
+            if (comboPrecio.SelectedItem != null)
+            {
+                precio = int.Parse(comboPrecio.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
+
+        }
+
     }
 }
