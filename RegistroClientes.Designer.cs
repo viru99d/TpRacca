@@ -58,7 +58,7 @@
             this.Idtext.Name = "Idtext";
             this.Idtext.Size = new System.Drawing.Size(206, 20);
             this.Idtext.TabIndex = 1;
-            this.Idtext.TextChanged += new System.EventHandler(this.Idtext_TextChanged);
+            
             // 
             // Nombre
             // 
@@ -76,7 +76,7 @@
             this.NombreText.Name = "NombreText";
             this.NombreText.Size = new System.Drawing.Size(206, 20);
             this.NombreText.TabIndex = 3;
-            this.NombreText.TextChanged += new System.EventHandler(this.NombreText_TextChanged);
+            
             // 
             // TelefonoText
             // 
@@ -84,7 +84,7 @@
             this.TelefonoText.Name = "TelefonoText";
             this.TelefonoText.Size = new System.Drawing.Size(206, 20);
             this.TelefonoText.TabIndex = 5;
-            this.TelefonoText.TextChanged += new System.EventHandler(this.TelefonoText_TextChanged);
+            
             // 
             // Telefono
             // 
@@ -113,7 +113,7 @@
             this.SocioDeCoop.Name = "SocioDeCoop";
             this.SocioDeCoop.Size = new System.Drawing.Size(206, 21);
             this.SocioDeCoop.TabIndex = 7;
-            this.SocioDeCoop.SelectedIndexChanged += new System.EventHandler(this.SocioDeCoop_SelectedIndexChanged);
+            
             // 
             // Titulo
             // 
