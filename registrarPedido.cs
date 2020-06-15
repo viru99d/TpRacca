@@ -35,8 +35,8 @@ namespace FotocopiadoraFacultad
 
             var items2 = new[]
             {
-                new { Text = "REALIZADO", Value = 1 },
-                new { Text = "PENDIENTE", Value = 2 },
+                new { Text = "PENDIENTE", Value = 1 },
+                new { Text = "REALIZADO", Value = 2 },
                 new { Text = "ENTREGADO", Value = 3 },
 
             };
