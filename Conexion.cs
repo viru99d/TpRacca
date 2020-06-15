@@ -52,49 +52,6 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void llenar1(ComboBox cc)
-        {
-            try
-            {
-                cnn.Open();
-                cmd = new SqlCommand("Select Nombre from Materia", cnn);
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    cc.Items.Add(dr["Nombre"].ToString());
-                    //cc.Items.Add(dr["IdMateria"].ToString());
-                }
-                cc.SelectedIndex = -1;
-                dr.Close();
-                cnn.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("No se llenó el casillero: " + error.ToString());
-            }
-        }
-
-        public void llenar2(ComboBox cd)
-        {
-            try
-            {
-                cnn.Open();
-                cmd = new SqlCommand("Select Nombre from Carrera", cnn);
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    cd.Items.Add(dr["Nombre"].ToString());
-                    //cd.Items.Add(dr["IdCarrera"].ToString());
-                }
-                cd.SelectedIndex = -1;
-                dr.Close();
-                cnn.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("No se llenó el casillero: " + error.ToString());
-            }
-        }
 
         public void AgregarCliente(int dni, string nombre, string telefono, int SocioCoop)
         {
@@ -113,11 +70,11 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void AgregarPedido(int pedido, DateTime fecha, int universidad, int carrera, int cliente, int apunte, int anillado, int precio, int estado)
+        public void AgregarPedido(int pedido, DateTime fecha, int universidad, int carrera, int materia, int cliente, int apunte, int anillado, int precio, int estado)
         {
             try
             {
-                string Cadena = $"Insert into Cliente(IdPedido, Fecha, codigoUniversdad, codigoCarrera, codigoCliente, codigoApunte, Encuadernillado, PrecioTotal, Estado) values('{pedido}','{fecha}', '{universidad}','{carrera}','{cliente}', '{apunte}', '{anillado}', '{precio}', '{estado}');";
+                string Cadena = $"Insert into Cliente(IdPedido, Fecha, codigoUniversdad, codigoCarrera, codigoMateria, codigoCliente, codigoApunte, Encuadernillado, PrecioTotal, Estado) values('{pedido}','{fecha}', '{universidad}','{carrera}','{cliente}', '{apunte}', '{anillado}', '{precio}', '{estado}');";
                 cnn.Open();
                 cmd = new SqlCommand(Cadena, cnn);
                 cmd.ExecuteNonQuery();
@@ -154,6 +111,39 @@ namespace FotocopiadoraFacultad
                 {
                     combo.DataSource = null;
                 }              
+                combo.SelectedIndex = -1;
+                dr.Close();
+                cnn.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se llenó el casillero: " + error.ToString());
+            }
+        }
+
+        public void CargarComboMateria(int idCarrera, ComboBox combo)
+        {
+            try
+            {
+                string query = $"Select Nombre, IdMateria from CarreraMateria inner join Materia on CarreraMateria.IdMateria = Materia.IdMateria where codigoCarrera = {idCarrera}";
+                cnn.Open();
+                cmd = new SqlCommand(query, cnn);
+                dr = cmd.ExecuteReader();
+                combo.DisplayMember = "Text";
+                combo.ValueMember = "Value";
+                var listaMateria = new List<dynamic>();
+                while (dr.Read())
+                {
+                    listaMateria.Add(new { Text = dr["Nombre"].ToString(), Value = dr["IdMateria"].ToString() });
+                }
+                if (listaMateria.Count > 0)
+                {
+                    combo.DataSource = listaMateria;
+                }
+                else
+                {
+                    combo.DataSource = null;
+                }
                 combo.SelectedIndex = -1;
                 dr.Close();
                 cnn.Close();

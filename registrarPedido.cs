@@ -61,6 +61,9 @@ namespace FotocopiadoraFacultad
                .GetProperty("Value").GetValue(cbxUniversidad.SelectedItem, null).ToString());
             int carrera = int.Parse(comboCarrera.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboCarrera.SelectedItem, null).ToString());
+            int materia = int.Parse(comboMateria.SelectedItem.GetType()
+              .GetProperty("Value").GetValue(comboMateria.SelectedItem, null).ToString());
+
             int cliente = int.Parse(comboCliente.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
             int apunte = int.Parse(comboApunte.SelectedItem.GetType()
@@ -75,7 +78,7 @@ namespace FotocopiadoraFacultad
             i++;
 
             var conexion = new Conexion();
-            conexion.AgregarPedido(pedido, fecha, universidad, carrera, cliente, apunte, anillado, precio, estado);
+            conexion.AgregarPedido(pedido, fecha, universidad, carrera, materia, cliente, apunte, anillado, precio, estado);
             MessageBox.Show("El Cliente se agrego correctamente a la lista");
         }
 
@@ -83,6 +86,7 @@ namespace FotocopiadoraFacultad
         {
             Conexion c = new Conexion();
             c.CargarComboUniversidad(cbxUniversidad);
+           
             //c.llenar1(comboMateria);
             //c.llenar2(comboCarrera);
 
@@ -103,6 +107,36 @@ namespace FotocopiadoraFacultad
             }
             var conexion = new Conexion();
             conexion.CargarComboCarrera(universidad, comboCarrera);
+
+        }
+
+        private void comboCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int carrera = 0;
+            if (comboCarrera.SelectedItem != null)
+            {
+                carrera = int.Parse(comboCarrera.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboCarrera.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
+            conexion.CargarComboMateria(carrera, comboMateria);
+        }
+
+        private void comboMateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int materia = 0;
+            if (comboMateria.SelectedItem != null)
+            {
+                materia = int.Parse(comboMateria.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboMateria.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
+            
+        }
+
+        private void comboAnillado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

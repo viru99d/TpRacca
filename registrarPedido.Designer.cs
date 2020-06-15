@@ -72,6 +72,7 @@
             this.comboMateria.Name = "comboMateria";
             this.comboMateria.Size = new System.Drawing.Size(147, 21);
             this.comboMateria.TabIndex = 4;
+            this.comboMateria.SelectedIndexChanged += new System.EventHandler(this.comboMateria_SelectedIndexChanged);
             // 
             // comboCarrera
             // 
@@ -82,12 +83,13 @@
             this.comboCarrera.Name = "comboCarrera";
             this.comboCarrera.Size = new System.Drawing.Size(147, 21);
             this.comboCarrera.TabIndex = 5;
+            this.comboCarrera.SelectedIndexChanged += new System.EventHandler(this.comboCarrera_SelectedIndexChanged);
             // 
             // comboCliente
             // 
             this.comboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCliente.FormattingEnabled = true;
-            this.comboCliente.Location = new System.Drawing.Point(294, 168);
+            this.comboCliente.Location = new System.Drawing.Point(294, 207);
             this.comboCliente.Margin = new System.Windows.Forms.Padding(2);
             this.comboCliente.Name = "comboCliente";
             this.comboCliente.Size = new System.Drawing.Size(147, 21);
@@ -97,21 +99,11 @@
             // 
             this.comboApunte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboApunte.FormattingEnabled = true;
-            this.comboApunte.Location = new System.Drawing.Point(294, 203);
+            this.comboApunte.Location = new System.Drawing.Point(294, 171);
             this.comboApunte.Margin = new System.Windows.Forms.Padding(2);
             this.comboApunte.Name = "comboApunte";
             this.comboApunte.Size = new System.Drawing.Size(147, 21);
             this.comboApunte.TabIndex = 7;
-            // 
-            // comboPrecio
-            // 
-            this.comboPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPrecio.FormattingEnabled = true;
-            this.comboPrecio.Location = new System.Drawing.Point(294, 284);
-            this.comboPrecio.Margin = new System.Windows.Forms.Padding(2);
-            this.comboPrecio.Name = "comboPrecio";
-            this.comboPrecio.Size = new System.Drawing.Size(147, 21);
-            this.comboPrecio.TabIndex = 8;
             // 
             // comboAnillado
             // 
@@ -122,6 +114,7 @@
             this.comboAnillado.Name = "comboAnillado";
             this.comboAnillado.Size = new System.Drawing.Size(147, 21);
             this.comboAnillado.TabIndex = 9;
+            this.comboAnillado.SelectedIndexChanged += new System.EventHandler(this.comboAnillado_SelectedIndexChanged);
             // 
             // comboEstado
             // 
@@ -201,7 +194,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(144, 168);
+            this.label4.Location = new System.Drawing.Point(144, 207);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 16);
@@ -223,7 +216,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(144, 208);
+            this.label6.Location = new System.Drawing.Point(144, 176);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 16);
