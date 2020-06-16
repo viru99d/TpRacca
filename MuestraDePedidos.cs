@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace FotocopiadoraFacultad
@@ -81,18 +76,33 @@ namespace FotocopiadoraFacultad
                     .GetProperty("Value").GetValue(comboBoxMateria.SelectedItem, null).ToString());
                     consulta = consulta + $"AND CodigoMateria = {materia} ";
                 }
-                if(checkBoxApunte.Checked)
+               /* if(checkBoxApunte.Checked)
                 {
 
-                }
+                }*/
                 if(checkBoxEncuadernillado.Checked)
                 {
-
+                    var anillado = int.Parse(comboBoxEncuadernillado.SelectedItem.GetType()
+                .GetProperty("Value").GetValue(comboBoxEncuadernillado.SelectedItem, null).ToString());
+                    consulta = consulta + $"AND Encuadernillado = {anillado}";
+                }
+                if (checkBoxEstado.Checked)
+                {
+                    var estado= int.Parse(comboBoxEstado.SelectedItem.GetType()
+                .GetProperty("Value").GetValue(comboBoxEstado.SelectedItem, null).ToString());
+                    consulta = consulta + $"AND Estado = {estado}";
                 }
 
                 consulta = consulta.Replace("where AND", "where");
-
             }
+            conexion.cnn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, conexion.cnn);
+            DataSet DS = new DataSet();
+            var commandBuilder = new SqlCommandBuilder(Adaptador);
+            var ds = new DataSet();
+            Adaptador.Fill(ds);
+            dataGridPedidos.ReadOnly = true;
+            dataGridPedidos.DataSource = ds.Tables[0];
         }
 
         private void comboBoxUniversidad_SelectedIndexChanged(object sender, EventArgs e)
