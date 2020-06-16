@@ -107,6 +107,7 @@
             this.comboApunte.Name = "comboApunte";
             this.comboApunte.Size = new System.Drawing.Size(195, 24);
             this.comboApunte.TabIndex = 7;
+            this.comboApunte.SelectedIndexChanged += new System.EventHandler(this.comboApunte_SelectedIndexChanged_1);
             // 
             // comboAnillado
             // 
@@ -117,6 +118,7 @@
             this.comboAnillado.Name = "comboAnillado";
             this.comboAnillado.Size = new System.Drawing.Size(195, 24);
             this.comboAnillado.TabIndex = 9;
+
             // 
             // comboEstado
             // 
@@ -127,7 +129,7 @@
             this.comboEstado.Name = "comboEstado";
             this.comboEstado.Size = new System.Drawing.Size(195, 24);
             this.comboEstado.TabIndex = 10;
-         
+
             // 
             // botonAgregar
             // 
@@ -197,9 +199,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(192, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.Size = new System.Drawing.Size(67, 16);
             this.label4.TabIndex = 16;
-            this.label4.Text = "CLIENTE N°:";
+            this.label4.Text = "CLIENTE:";
             // 
             // label5
             // 
@@ -217,9 +219,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(192, 217);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 16);
+            this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 18;
-            this.label6.Text = "APUNTE N°:";
+            this.label6.Text = "APUNTE:";
             // 
             // label8
             // 
@@ -261,6 +263,7 @@
             this.comboPrecio.Name = "comboPrecio";
             this.comboPrecio.Size = new System.Drawing.Size(195, 24);
             this.comboPrecio.TabIndex = 24;
+            this.comboPrecio.SelectedIndexChanged += new System.EventHandler(this.comboPrecio_SelectedIndexChanged_1);
             // 
             // registrarPedido
             // 

@@ -71,17 +71,17 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void AgregarPedido(int pedido, DateTime fecha, int universidad,int materia, int carrera, int cliente, int apunte, int anillado, int precio, int estado)
+        public void AgregarPedido(int pedido, DateTime fecha, int universidad,int materia, int carrera, int cliente, int apunte, int anillado, decimal precio, int estado)
         {
             try
             {
-                string Cadena = $"Insert into Pedido(IdPedido, Fecha, CodigoUniversidad, CodigoMateria, CodigoCarrera, CodigoCliente, CodigoApunte, Encuadernillado, PrecioTotal, Estado) values('{pedido}','{fecha}', '{universidad}','{materia}','{carrera}','{cliente}', '{apunte}', '{anillado}', '{precio}', '{estado}');";
+                string Cadena = $"Insert into Pedido(IdPedido, Fecha, CodigoUniversidad, CodigoMateria, CodigoCarrera, CodigoCliente, CodigoApunte, Encuadernillado, PrecioTotal, Estado) values( {pedido},{fecha}, {universidad},{materia},{carrera},{cliente}, {apunte}, {anillado}, {precio}, {estado});";
                 cnn.Open();
                 cmd = new SqlCommand(Cadena, cnn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("El Pedido se cargó correctamente a la base de datos");
                 cnn.Close();
-                MessageBox.Show("El Pedido se agrego correctamente a la lista");
+                MessageBox.Show("El Pedido se cargó correctamente a la base de datos");
+
             }
             catch (Exception)
             {
@@ -160,16 +160,18 @@ namespace FotocopiadoraFacultad
         {
             try
             {
-                string query = $"Select IdApunte, Precio From Apunte where CodigoMateria ={idMateria }";
+                string query = $"Select IdApunte, Nombre From Apunte where CodigoMateria ={idMateria}";
                 cnn.Open();
                 cmd = new SqlCommand(query, cnn);
                 dr = cmd.ExecuteReader();
                 combo.DisplayMember = "Text";
                 combo.ValueMember = "Value";
                 var listaApunte = new List<dynamic>();
+           
                 while (dr.Read())
                 {
-                    listaApunte.Add(new { Text = dr["IdApunte"].ToString(), Value = dr["IdApunte"].ToString() });
+                    listaApunte.Add(new { Text = dr["Nombre"].ToString(), Value = dr["IdApunte"].ToString() });
+                   
                 }
                 if (listaApunte.Count > 0)
                 {
@@ -193,7 +195,7 @@ namespace FotocopiadoraFacultad
         {
             try
             {
-                string query = $"Select IdCliente from Cliente";
+                string query = $"Select IdCliente, Nombre from Cliente";
                 cnn.Open();
                 cmd = new SqlCommand(query, cnn);
                 dr = cmd.ExecuteReader();
@@ -202,7 +204,7 @@ namespace FotocopiadoraFacultad
                 var listaCliente = new List<dynamic>();
                 while (dr.Read())
                 {
-                    listaCliente.Add(new { Text = dr["IdCliente"].ToString(), Value = dr["IdCliente"].ToString() });
+                    listaCliente.Add(new { Text = dr["Nombre"].ToString(), Value = dr["IdCliente"].ToString() });
                 }
                 ca.DataSource = listaCliente;
                 ca.SelectedIndex = -1;
@@ -216,17 +218,16 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void CargarComboPrecio(int idMateria, ComboBox combo)
+        public void CargarComboPrecio(int apunte, ComboBox combo)
         {
             try
             {
-                string query = $"Select IdApunte, Precio From Apunte where CodigoMateria ={idMateria}";
+                string query = $"Select Precio From Apunte where IdApunte = {apunte}";
                 cnn.Open();
                 cmd = new SqlCommand(query, cnn);
                 dr = cmd.ExecuteReader();
                 combo.DisplayMember = "Text";
                 combo.ValueMember = "Value";
-
                 var listaPrecio = new List<dynamic>();
                 while (dr.Read())
                 {
@@ -240,6 +241,7 @@ namespace FotocopiadoraFacultad
                 {
                     combo.DataSource = null;
                 }
+               
                
                 dr.Close();
                 cnn.Close();

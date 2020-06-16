@@ -51,37 +51,6 @@ namespace FotocopiadoraFacultad
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            int i = 1;
-            int pedido = i;
-            DateTime fecha = DateTime.Now;
-            int universidad = int.Parse(cbxUniversidad.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(cbxUniversidad.SelectedItem, null).ToString());
-            int carrera = int.Parse(comboCarrera.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboCarrera.SelectedItem, null).ToString());
-            int materia = int.Parse(comboMateria.SelectedItem.GetType()
-              .GetProperty("Value").GetValue(comboMateria.SelectedItem, null).ToString());
-
-            int cliente = int.Parse(comboCliente.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
-            int apunte = int.Parse(comboApunte.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboApunte.SelectedItem, null).ToString());
-            int anillado = int.Parse(comboAnillado.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboAnillado.SelectedItem, null).ToString());
-
-            int precio = 1;
-
-            int estado = int.Parse(comboEstado.SelectedItem.GetType()
-               .GetProperty("Value").GetValue(comboEstado.SelectedItem, null).ToString());
-            i++;
-
-            var conexion = new Conexion();
-            conexion.AgregarPedido(pedido, fecha, universidad, materia, carrera, cliente, apunte, anillado, precio, estado);
-            
-        }
-
         private void registrarPedido_Load(object sender, EventArgs e)
         {
             Conexion c = new Conexion();
@@ -90,7 +59,18 @@ namespace FotocopiadoraFacultad
   
         }
 
-        
+        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cliente = 0;
+            if (comboCliente.SelectedItem != null)
+            {
+                cliente = int.Parse(comboCliente.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
+
+        }
+
         private void comboBPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
             int universidad = 0;
@@ -126,32 +106,60 @@ namespace FotocopiadoraFacultad
             }
             var conexion = new Conexion();
             conexion.CargarComboApunte(materia, comboApunte);
-            conexion.CargarComboPrecio(materia, comboPrecio);
+            
         }
 
-        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboApunte_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            int cliente = 0;
-            if (comboCliente.SelectedItem != null)
+            int apunte = 0;
+            if (comboApunte.SelectedItem != null)
             {
-                cliente = int.Parse(comboCliente.SelectedItem.GetType()
-                    .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
+                apunte = int.Parse(comboApunte.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboApunte.SelectedItem, null).ToString());
             }
             var conexion = new Conexion();
-
+            conexion.CargarComboPrecio(apunte, comboPrecio);
         }
 
-        private void comboPrecio_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboPrecio_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            int precio = 0;
+            decimal precio = 0;
             if (comboPrecio.SelectedItem != null)
             {
-                precio = int.Parse(comboPrecio.SelectedItem.GetType()
+                precio = decimal.Parse(comboPrecio.SelectedItem.GetType()
                     .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
             }
             var conexion = new Conexion();
-
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            int i = 1;
+            int pedido = i;
+            DateTime fecha = DateTime.Now;
+            int universidad = int.Parse(cbxUniversidad.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(cbxUniversidad.SelectedItem, null).ToString());
+            int carrera = int.Parse(comboCarrera.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboCarrera.SelectedItem, null).ToString());
+            int materia = int.Parse(comboMateria.SelectedItem.GetType()
+              .GetProperty("Value").GetValue(comboMateria.SelectedItem, null).ToString());
+            int cliente = int.Parse(comboCliente.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboCliente.SelectedItem, null).ToString());
+            int apunte = int.Parse(comboApunte.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboApunte.SelectedItem, null).ToString());
+            int anillado = int.Parse(comboAnillado.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboAnillado.SelectedItem, null).ToString());
+            decimal precio = decimal.Parse(comboPrecio.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+
+            int estado = int.Parse(comboEstado.SelectedItem.GetType()
+               .GetProperty("Value").GetValue(comboEstado.SelectedItem, null).ToString());
+            i++;
+
+            var conexion = new Conexion();
+            conexion.AgregarPedido(pedido, fecha, universidad, materia, carrera, cliente, apunte, anillado, precio, estado);
+
+        }
     }
 }
