@@ -71,11 +71,11 @@ namespace FotocopiadoraFacultad
             }
         }
 
-        public void AgregarPedido(int pedido, DateTime fecha, int universidad,int materia, int carrera, int cliente, int apunte, int anillado, decimal precio, int estado)
+        public void AgregarPedido( DateTime fecha, int universidad,int materia, int carrera, int cliente, int apunte, int anillado, decimal precio, int estado)
         {
             try
             {
-                string Cadena = $"Insert into Pedido(IdPedido, Fecha, CodigoUniversidad, CodigoMateria, CodigoCarrera, CodigoCliente, CodigoApunte, Encuadernillado, PrecioTotal, Estado) values( {pedido},{fecha}, {universidad},{materia},{carrera},{cliente}, {apunte}, {anillado}, {precio}, {estado});";
+                string Cadena = $"Insert into Pedido(Fecha, CodigoUniversidad, CodigoMateria, CodigoCarrera, CodigoCliente, CodigoApunte, Encuadernillado, PrecioTotal, Estado) values('{fecha.ToString("yyyyMMdd")}', {universidad},{materia},{carrera},{cliente}, {apunte}, {anillado}, {precio}, {estado});";
                 cnn.Open();
                 cmd = new SqlCommand(Cadena, cnn);
                 cmd.ExecuteNonQuery();
@@ -83,7 +83,7 @@ namespace FotocopiadoraFacultad
                 MessageBox.Show("El Pedido se cargó correctamente a la base de datos");
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 MessageBox.Show("No se pudo agregar el pedido");
                 cnn.Close();

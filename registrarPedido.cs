@@ -133,10 +133,7 @@ namespace FotocopiadoraFacultad
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
-            int i = 1;
-            int pedido = i;
+        { 
             DateTime fecha = DateTime.Now;
             int universidad = int.Parse(cbxUniversidad.SelectedItem.GetType()
                .GetProperty("Value").GetValue(cbxUniversidad.SelectedItem, null).ToString());
@@ -155,10 +152,9 @@ namespace FotocopiadoraFacultad
 
             int estado = int.Parse(comboEstado.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboEstado.SelectedItem, null).ToString());
-            i++;
 
             var conexion = new Conexion();
-            conexion.AgregarPedido(pedido, fecha, universidad, materia, carrera, cliente, apunte, anillado, precio, estado);
+            conexion.AgregarPedido(fecha, universidad, materia, carrera, cliente, apunte, anillado, precio, estado);
 
         }
     }
