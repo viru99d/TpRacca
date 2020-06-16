@@ -179,6 +179,7 @@
             this.comboBoxApunte.Name = "comboBoxApunte";
             this.comboBoxApunte.Size = new System.Drawing.Size(109, 21);
             this.comboBoxApunte.TabIndex = 25;
+            this.comboBoxApunte.SelectedIndexChanged += new System.EventHandler(this.comboBoxApunte_SelectedIndexChanged);
             // 
             // checkBoxApunte
             // 

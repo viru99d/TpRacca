@@ -51,11 +51,11 @@ namespace FotocopiadoraFacultad
                 }
                 if (checkBoxNombre.Checked)
                 {
-                    consulta = consulta + $"AND Nombre = {textBoxNombre.Text} ";
+                    consulta = consulta + $"AND Nombre = '{textBoxNombre.Text}' ";
                 }
                 if (checkBoxTelefono.Checked)
                 {
-                    consulta = consulta + $"AND Telefono = {textBoxTelefono.Text}  ";
+                    consulta = consulta + $"AND Telefono = '{textBoxTelefono.Text}' ";
                 }
                 if (checkBoxSocioDeCoop.Checked)
                 {

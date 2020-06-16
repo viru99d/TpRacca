@@ -10,6 +10,9 @@ namespace FotocopiadoraFacultad
         public MuestraDePedidos()
         {
             InitializeComponent();
+            var conexion = new Conexion();
+            conexion.CargarComboUniversidad(comboBoxUniversidad);
+
             comboBoxEncuadernillado.DisplayMember = "Text";
             comboBoxEncuadernillado.ValueMember = "Value";
 
@@ -33,6 +36,8 @@ namespace FotocopiadoraFacultad
             };
 
             comboBoxEstado.DataSource = items2;
+
+            conexion.CargarComboCliente(comboBoxCliente);
         }
 
         private void Volver_Click(object sender, EventArgs e)
@@ -76,10 +81,12 @@ namespace FotocopiadoraFacultad
                     .GetProperty("Value").GetValue(comboBoxMateria.SelectedItem, null).ToString());
                     consulta = consulta + $"AND CodigoMateria = {materia} ";
                 }
-               /* if(checkBoxApunte.Checked)
+               if(checkBoxApunte.Checked)
                 {
-
-                }*/
+                    var apunte = int.Parse(comboBoxApunte.SelectedItem.GetType()
+                     .GetProperty("Value").GetValue(comboBoxApunte.SelectedItem, null).ToString());
+                    consulta = consulta + $"AND CodigoApunte = {apunte} ";
+                }
                 if(checkBoxEncuadernillado.Checked)
                 {
                     var anillado = int.Parse(comboBoxEncuadernillado.SelectedItem.GetType()
@@ -148,6 +155,17 @@ namespace FotocopiadoraFacultad
             {
                 cliente = int.Parse(comboBoxCliente.SelectedItem.GetType()
                     .GetProperty("Value").GetValue(comboBoxCliente.SelectedItem, null).ToString());
+            }
+            var conexion = new Conexion();
+        }
+
+        private void comboBoxApunte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int apunte = 0;
+            if (comboBoxApunte.SelectedItem != null)
+            {
+                apunte = int.Parse(comboBoxApunte.SelectedItem.GetType()
+                    .GetProperty("Value").GetValue(comboBoxApunte.SelectedItem, null).ToString());
             }
             var conexion = new Conexion();
         }
