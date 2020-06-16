@@ -262,7 +262,7 @@
             this.buttonRealizado.Name = "buttonRealizado";
             this.buttonRealizado.Size = new System.Drawing.Size(104, 34);
             this.buttonRealizado.TabIndex = 33;
-            this.buttonRealizado.Text = "CAMBIAR A ACTUALIZADO";
+            this.buttonRealizado.Text = "CAMBIAR A REALIZADO";
             this.buttonRealizado.UseVisualStyleBackColor = true;
             this.buttonRealizado.Click += new System.EventHandler(this.buttonRealizado_Click);
             // 
