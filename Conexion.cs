@@ -251,5 +251,23 @@ namespace FotocopiadoraFacultad
                 MessageBox.Show("No se llenó el casillero: " + error.ToString());
             }
         }
+
+        public void ActualizarEstado(int idPedido, int Estado)
+        {
+            try
+            {
+                string query = $"update Pedido set Estado = {Estado} where IdPedido = {idPedido} ";
+                cnn.Open();
+                cmd = new SqlCommand(query, cnn);
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+                MessageBox.Show("Se actualizó correctamente el estado del pedido.");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se se actualizó el estaod: " + error.ToString());
+            }
+        }
+        
     }
 }

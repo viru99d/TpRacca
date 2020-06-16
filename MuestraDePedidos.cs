@@ -50,7 +50,9 @@ namespace FotocopiadoraFacultad
             var conexion = new Conexion();
             string consulta = $"Select IdPedido 'Numero de Pedido', Fecha, U.Nombre 'Universidad', C.Nombre 'Carrera', " +
                 $"M.Nombre 'Materia', A.Nombre 'Apunte', Cli.Nombre 'Cliente', " +
-                $"case when P.Encuadernillado = 1 then 'SI' else 'NO'end 'Anillado', P.PrecioTotal 'Total a pagar'" +
+                $"case when P.Encuadernillado = 1 then 'SI' else 'NO'end 'Anillado', " +
+                $"case when P.Estado=1 then 'Pendiente' when P.Estado=2 then 'Realizado' else 'Terminado' end 'Estado', " +
+                $"P.PrecioTotal 'Total a pagar' " +
                 $"from Pedido P inner join Universidad U " +
                 $"on U.IdUniversidad = P.CodigoUniversidad " +
                 $"inner join Carrera C on C.IdCarrera = P.CodigoCarrera " +
@@ -83,19 +85,19 @@ namespace FotocopiadoraFacultad
                     .GetProperty("Value").GetValue(comboBoxCarerra.SelectedItem, null).ToString());
                     consulta = consulta + $"AND P.CodigoCarrera = {carrera} ";
                 }
-                if(checkBoxMateria.Checked)
+                if (checkBoxMateria.Checked)
                 {
                     var materia = int.Parse(comboBoxMateria.SelectedItem.GetType()
                     .GetProperty("Value").GetValue(comboBoxMateria.SelectedItem, null).ToString());
                     consulta = consulta + $"AND P.CodigoMateria = {materia} ";
                 }
-               if(checkBoxApunte.Checked)
+                if (checkBoxApunte.Checked)
                 {
                     var apunte = int.Parse(comboBoxApunte.SelectedItem.GetType()
                      .GetProperty("Value").GetValue(comboBoxApunte.SelectedItem, null).ToString());
                     consulta = consulta + $"AND P.CodigoApunte = {apunte} ";
                 }
-                if(checkBoxEncuadernillado.Checked)
+                if (checkBoxEncuadernillado.Checked)
                 {
                     var anillado = int.Parse(comboBoxEncuadernillado.SelectedItem.GetType()
                 .GetProperty("Value").GetValue(comboBoxEncuadernillado.SelectedItem, null).ToString());
@@ -103,7 +105,7 @@ namespace FotocopiadoraFacultad
                 }
                 if (checkBoxEstado.Checked)
                 {
-                    var estado= int.Parse(comboBoxEstado.SelectedItem.GetType()
+                    var estado = int.Parse(comboBoxEstado.SelectedItem.GetType()
                 .GetProperty("Value").GetValue(comboBoxEstado.SelectedItem, null).ToString());
                     consulta = consulta + $"AND P.Estado = {estado}";
                 }
@@ -116,7 +118,7 @@ namespace FotocopiadoraFacultad
             var commandBuilder = new SqlCommandBuilder(Adaptador);
             var ds = new DataSet();
             Adaptador.Fill(ds);
-            dataGridPedidos.ReadOnly = true;
+            dataGridPedidos.ReadOnly = false;
             dataGridPedidos.DataSource = ds.Tables[0];
         }
 
@@ -176,6 +178,39 @@ namespace FotocopiadoraFacultad
                     .GetProperty("Value").GetValue(comboBoxApunte.SelectedItem, null).ToString());
             }
             var conexion = new Conexion();
+        }
+
+        private void buttonRealizado_Click(object sender, EventArgs e)
+        {
+            if(dataGridPedidos.SelectedRows.Count>0)
+            {
+                var seleccionado = dataGridPedidos.SelectedRows[0];
+                int id = int.Parse(seleccionado.Cells[0].Value.ToString());
+                int Estado = 2;
+                var conexion = new Conexion();
+                conexion.ActualizarEstado(id, Estado);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione la fila de un pedido para poder actualizar el estado.");
+            }
+             
+        }
+
+        private void buttonEntregado_Click(object sender, EventArgs e)
+        {
+            if (dataGridPedidos.SelectedRows.Count > 0)
+            {
+                var seleccionado = dataGridPedidos.SelectedRows[0];
+                int id = int.Parse(seleccionado.Cells[0].Value.ToString());
+                int Estado = 3;
+                var conexion = new Conexion();
+                conexion.ActualizarEstado(id, Estado);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione la fila de un pedido para poder actualizar el estado.");
+            }
         }
     }
 }

@@ -49,6 +49,8 @@
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.comboBoxCliente = new System.Windows.Forms.ComboBox();
+            this.buttonRealizado = new System.Windows.Forms.Button();
+            this.buttonEntregado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 9);
+            this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 26);
             this.label1.TabIndex = 8;
@@ -74,7 +76,7 @@
             // 
             // Buscar
             // 
-            this.Buscar.Location = new System.Drawing.Point(650, 391);
+            this.Buscar.Location = new System.Drawing.Point(618, 351);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(104, 34);
             this.Buscar.TabIndex = 6;
@@ -86,16 +88,16 @@
             // 
             this.dataGridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPedidos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridPedidos.Location = new System.Drawing.Point(20, 216);
+            this.dataGridPedidos.Location = new System.Drawing.Point(24, 193);
             this.dataGridPedidos.Name = "dataGridPedidos";
-            this.dataGridPedidos.Size = new System.Drawing.Size(765, 169);
+            this.dataGridPedidos.Size = new System.Drawing.Size(765, 152);
             this.dataGridPedidos.TabIndex = 5;
             // 
             // comboBoxUniversidad
             // 
             this.comboBoxUniversidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUniversidad.FormattingEnabled = true;
-            this.comboBoxUniversidad.Location = new System.Drawing.Point(354, 73);
+            this.comboBoxUniversidad.Location = new System.Drawing.Point(358, 50);
             this.comboBoxUniversidad.Name = "comboBoxUniversidad";
             this.comboBoxUniversidad.Size = new System.Drawing.Size(109, 21);
             this.comboBoxUniversidad.TabIndex = 19;
@@ -105,7 +107,7 @@
             // 
             this.checkBoxMateria.AutoSize = true;
             this.checkBoxMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMateria.Location = new System.Drawing.Point(354, 153);
+            this.checkBoxMateria.Location = new System.Drawing.Point(358, 130);
             this.checkBoxMateria.Name = "checkBoxMateria";
             this.checkBoxMateria.Size = new System.Drawing.Size(72, 20);
             this.checkBoxMateria.TabIndex = 18;
@@ -116,7 +118,7 @@
             // 
             this.checkBoxUniversidad.AutoSize = true;
             this.checkBoxUniversidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxUniversidad.Location = new System.Drawing.Point(354, 47);
+            this.checkBoxUniversidad.Location = new System.Drawing.Point(358, 24);
             this.checkBoxUniversidad.Name = "checkBoxUniversidad";
             this.checkBoxUniversidad.Size = new System.Drawing.Size(100, 20);
             this.checkBoxUniversidad.TabIndex = 16;
@@ -127,7 +129,7 @@
             // 
             this.checkBoxFecha.AutoSize = true;
             this.checkBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxFecha.Location = new System.Drawing.Point(118, 85);
+            this.checkBoxFecha.Location = new System.Drawing.Point(122, 62);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(65, 20);
             this.checkBoxFecha.TabIndex = 12;
@@ -136,7 +138,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 111);
+            this.dateTimePicker1.Location = new System.Drawing.Point(122, 88);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(188, 20);
             this.dateTimePicker1.TabIndex = 20;
@@ -145,7 +147,7 @@
             // 
             this.comboBoxMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMateria.FormattingEnabled = true;
-            this.comboBoxMateria.Location = new System.Drawing.Point(354, 179);
+            this.comboBoxMateria.Location = new System.Drawing.Point(358, 156);
             this.comboBoxMateria.Name = "comboBoxMateria";
             this.comboBoxMateria.Size = new System.Drawing.Size(109, 21);
             this.comboBoxMateria.TabIndex = 21;
@@ -155,7 +157,7 @@
             // 
             this.comboBoxCarerra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCarerra.FormattingEnabled = true;
-            this.comboBoxCarerra.Location = new System.Drawing.Point(354, 126);
+            this.comboBoxCarerra.Location = new System.Drawing.Point(358, 103);
             this.comboBoxCarerra.Name = "comboBoxCarerra";
             this.comboBoxCarerra.Size = new System.Drawing.Size(109, 21);
             this.comboBoxCarerra.TabIndex = 23;
@@ -165,7 +167,7 @@
             // 
             this.checkBoxCarrera.AutoSize = true;
             this.checkBoxCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCarrera.Location = new System.Drawing.Point(354, 100);
+            this.checkBoxCarrera.Location = new System.Drawing.Point(358, 77);
             this.checkBoxCarrera.Name = "checkBoxCarrera";
             this.checkBoxCarrera.Size = new System.Drawing.Size(72, 20);
             this.checkBoxCarrera.TabIndex = 22;
@@ -176,7 +178,7 @@
             // 
             this.comboBoxApunte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxApunte.FormattingEnabled = true;
-            this.comboBoxApunte.Location = new System.Drawing.Point(535, 73);
+            this.comboBoxApunte.Location = new System.Drawing.Point(539, 50);
             this.comboBoxApunte.Name = "comboBoxApunte";
             this.comboBoxApunte.Size = new System.Drawing.Size(109, 21);
             this.comboBoxApunte.TabIndex = 25;
@@ -186,7 +188,7 @@
             // 
             this.checkBoxApunte.AutoSize = true;
             this.checkBoxApunte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxApunte.Location = new System.Drawing.Point(535, 47);
+            this.checkBoxApunte.Location = new System.Drawing.Point(539, 24);
             this.checkBoxApunte.Name = "checkBoxApunte";
             this.checkBoxApunte.Size = new System.Drawing.Size(69, 20);
             this.checkBoxApunte.TabIndex = 24;
@@ -197,7 +199,7 @@
             // 
             this.checkBoxCliente.AutoSize = true;
             this.checkBoxCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCliente.Location = new System.Drawing.Point(118, 137);
+            this.checkBoxCliente.Location = new System.Drawing.Point(122, 114);
             this.checkBoxCliente.Name = "checkBoxCliente";
             this.checkBoxCliente.Size = new System.Drawing.Size(68, 20);
             this.checkBoxCliente.TabIndex = 26;
@@ -208,7 +210,7 @@
             // 
             this.comboBoxEncuadernillado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEncuadernillado.FormattingEnabled = true;
-            this.comboBoxEncuadernillado.Location = new System.Drawing.Point(535, 126);
+            this.comboBoxEncuadernillado.Location = new System.Drawing.Point(539, 103);
             this.comboBoxEncuadernillado.Name = "comboBoxEncuadernillado";
             this.comboBoxEncuadernillado.Size = new System.Drawing.Size(109, 21);
             this.comboBoxEncuadernillado.TabIndex = 29;
@@ -217,7 +219,7 @@
             // 
             this.checkBoxEncuadernillado.AutoSize = true;
             this.checkBoxEncuadernillado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEncuadernillado.Location = new System.Drawing.Point(535, 100);
+            this.checkBoxEncuadernillado.Location = new System.Drawing.Point(539, 77);
             this.checkBoxEncuadernillado.Name = "checkBoxEncuadernillado";
             this.checkBoxEncuadernillado.Size = new System.Drawing.Size(125, 20);
             this.checkBoxEncuadernillado.TabIndex = 28;
@@ -228,7 +230,7 @@
             // 
             this.comboBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Location = new System.Drawing.Point(535, 178);
+            this.comboBoxEstado.Location = new System.Drawing.Point(539, 155);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(109, 21);
             this.comboBoxEstado.TabIndex = 31;
@@ -237,7 +239,7 @@
             // 
             this.checkBoxEstado.AutoSize = true;
             this.checkBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEstado.Location = new System.Drawing.Point(535, 152);
+            this.checkBoxEstado.Location = new System.Drawing.Point(539, 129);
             this.checkBoxEstado.Name = "checkBoxEstado";
             this.checkBoxEstado.Size = new System.Drawing.Size(70, 20);
             this.checkBoxEstado.TabIndex = 30;
@@ -248,11 +250,31 @@
             // 
             this.comboBoxCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Location = new System.Drawing.Point(118, 163);
+            this.comboBoxCliente.Location = new System.Drawing.Point(122, 140);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(109, 21);
             this.comboBoxCliente.TabIndex = 32;
             this.comboBoxCliente.SelectedIndexChanged += new System.EventHandler(this.comboBoxCliente_SelectedIndexChanged);
+            // 
+            // buttonRealizado
+            // 
+            this.buttonRealizado.Location = new System.Drawing.Point(560, 391);
+            this.buttonRealizado.Name = "buttonRealizado";
+            this.buttonRealizado.Size = new System.Drawing.Size(104, 34);
+            this.buttonRealizado.TabIndex = 33;
+            this.buttonRealizado.Text = "CAMBIAR A ACTUALIZADO";
+            this.buttonRealizado.UseVisualStyleBackColor = true;
+            this.buttonRealizado.Click += new System.EventHandler(this.buttonRealizado_Click);
+            // 
+            // buttonEntregado
+            // 
+            this.buttonEntregado.Location = new System.Drawing.Point(684, 391);
+            this.buttonEntregado.Name = "buttonEntregado";
+            this.buttonEntregado.Size = new System.Drawing.Size(104, 34);
+            this.buttonEntregado.TabIndex = 34;
+            this.buttonEntregado.Text = "CAMBIAR A ENTREGADO";
+            this.buttonEntregado.UseVisualStyleBackColor = true;
+            this.buttonEntregado.Click += new System.EventHandler(this.buttonEntregado_Click);
             // 
             // MuestraDePedidos
             // 
@@ -261,6 +283,8 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonEntregado);
+            this.Controls.Add(this.buttonRealizado);
             this.Controls.Add(this.comboBoxCliente);
             this.Controls.Add(this.comboBoxEstado);
             this.Controls.Add(this.checkBoxEstado);
@@ -312,5 +336,7 @@
         private System.Windows.Forms.ComboBox comboBoxEstado;
         private System.Windows.Forms.CheckBox checkBoxEstado;
         private System.Windows.Forms.ComboBox comboBoxCliente;
+        private System.Windows.Forms.Button buttonRealizado;
+        private System.Windows.Forms.Button buttonEntregado;
     }
 }
