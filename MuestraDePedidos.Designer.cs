@@ -85,6 +85,7 @@
             // dataGridPedidos
             // 
             this.dataGridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPedidos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridPedidos.Location = new System.Drawing.Point(20, 216);
             this.dataGridPedidos.Name = "dataGridPedidos";
             this.dataGridPedidos.Size = new System.Drawing.Size(765, 169);

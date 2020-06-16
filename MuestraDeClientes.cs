@@ -28,11 +28,6 @@ namespace FotocopiadoraFacultad
             comboBoxSocio.DataSource = items;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void Volver_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,8 +36,10 @@ namespace FotocopiadoraFacultad
         private void Buscar_Click(object sender, EventArgs e)
         {
             var conexion = new Conexion();
-            string consulta = "Select * from Cliente ";
-            if(checkBoxId.Checked || checkBoxNombre.Checked || checkBoxTelefono.Checked || checkBoxSocioDeCoop.Checked)
+            string consulta = $"select IdCliente 'DNI', Nombre 'Nombre', Telefono 'Telefono', " +
+               $"case when SocioDeCoop = 1 then 'SI' else 'NO'end 'Socio de Cooperadora'" +
+               $"from Cliente ";
+            if (checkBoxId.Checked || checkBoxNombre.Checked || checkBoxTelefono.Checked || checkBoxSocioDeCoop.Checked)
             {
                 consulta = consulta + $"where ";
                 if (checkBoxId.Checked)
