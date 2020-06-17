@@ -83,7 +83,7 @@ namespace FotocopiadoraFacultad
                 MessageBox.Show("El Pedido se cargó correctamente a la base de datos");
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("No se pudo agregar el pedido");
                 cnn.Close();
@@ -236,6 +236,7 @@ namespace FotocopiadoraFacultad
                 if (listaPrecio.Count > 0)
                 {
                     combo.DataSource = listaPrecio;
+               
                 }
                 else
                 {

@@ -38,8 +38,8 @@
             this.inicioSesión = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,16 +114,6 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FotocopiadoraFacultad.Properties.Resources.copiadora_profesional_oficina_documentos_papel_impresion_impresora_multifuncionales_aislo_ejemplo_vector_maquina_impresora_copiadora_trabajo_oficina_53562_6147__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(529, 127);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // Salir
             // 
             this.Salir.Location = new System.Drawing.Point(639, 411);
@@ -133,6 +123,16 @@
             this.Salir.Text = "SALIR";
             this.Salir.UseVisualStyleBackColor = true;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FotocopiadoraFacultad.Properties.Resources.copiadora_profesional_oficina_documentos_papel_impresion_impresora_multifuncionales_aislo_ejemplo_vector_maquina_impresora_copiadora_trabajo_oficina_53562_6147__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(529, 127);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // Inicio
             // 

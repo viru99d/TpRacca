@@ -33,5 +33,6 @@ namespace FotocopiadoraFacultad
             using (MuestraDeClientes ventanaMuestraDeClientes = new MuestraDeClientes())
                 ventanaMuestraDeClientes.ShowDialog();
         }
+
     }
 }

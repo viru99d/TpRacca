@@ -24,8 +24,8 @@ namespace FotocopiadoraFacultad
 
             var items = new[]
             {
-                new { Text = "SI", Value = 1 },
-                new { Text = "NO", Value = 2 }
+                new { Text = "NO", Value = 1 },
+                new { Text = "SI", Value = 2 }
             };
 
             comboAnillado.DataSource = items;
@@ -123,11 +123,14 @@ namespace FotocopiadoraFacultad
 
         private void comboPrecio_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            decimal precio = 0;
+            decimal precio =0;
             if (comboPrecio.SelectedItem != null)
             {
-                precio = decimal.Parse(comboPrecio.SelectedItem.GetType()
-                    .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+             
+                    precio = decimal.Parse(comboPrecio.SelectedItem.GetType()
+                  .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+                
+                
             }
             var conexion = new Conexion();
         }
@@ -147,8 +150,21 @@ namespace FotocopiadoraFacultad
                .GetProperty("Value").GetValue(comboApunte.SelectedItem, null).ToString());
             int anillado = int.Parse(comboAnillado.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboAnillado.SelectedItem, null).ToString());
-            decimal precio = decimal.Parse(comboPrecio.SelectedItem.GetType()
-                    .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+
+            decimal precio = 0m;
+            if (comboAnillado.Text == "NO")
+            {
+                precio = precio + decimal.Parse(comboPrecio.SelectedItem.GetType()
+              .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+            }
+            else
+            {
+                precio = 60m;
+                precio = precio + decimal.Parse(comboPrecio.SelectedItem.GetType()
+              .GetProperty("Value").GetValue(comboPrecio.SelectedItem, null).ToString());
+            }
+
+
 
             int estado = int.Parse(comboEstado.SelectedItem.GetType()
                .GetProperty("Value").GetValue(comboEstado.SelectedItem, null).ToString());
