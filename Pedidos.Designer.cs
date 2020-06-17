@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.Volver = new System.Windows.Forms.Button();
             this.RegistroPedidos = new System.Windows.Forms.Button();
             this.MostrarPedidos = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@
             this.Controls.Add(this.Volver);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
