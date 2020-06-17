@@ -64,7 +64,8 @@
             this.Controls.Add(this.VerClientes);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.RegistroCliente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Clientes";
             this.ResumeLayout(false);
 

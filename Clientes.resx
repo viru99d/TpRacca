@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RegistroCliente.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 64</value>
+    <value>226, 96</value>
   </data>
   <data name="RegistroCliente.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 54</value>
@@ -168,7 +168,7 @@
     <value>1</value>
   </data>
   <data name="VerClientes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 160</value>
+    <value>224, 192</value>
   </data>
   <data name="VerClientes.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 54</value>

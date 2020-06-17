@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 9);
+            this.label1.Location = new System.Drawing.Point(19, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 26);
             this.label1.TabIndex = 8;
@@ -282,7 +282,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(809, 450);
             this.Controls.Add(this.buttonEntregado);
             this.Controls.Add(this.buttonRealizado);
             this.Controls.Add(this.comboBoxCliente);
@@ -305,7 +305,9 @@
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.Buscar);
             this.Controls.Add(this.dataGridPedidos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MuestraDePedidos";
             this.Text = "Pedidos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).EndInit();

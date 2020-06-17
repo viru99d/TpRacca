@@ -273,6 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(585, 381);
             this.Controls.Add(this.comboPrecio);
             this.Controls.Add(this.label7);
@@ -293,7 +294,9 @@
             this.Controls.Add(this.comboCarrera);
             this.Controls.Add(this.comboMateria);
             this.Controls.Add(this.cbxUniversidad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "registrarPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Pedidos";

@@ -58,7 +58,6 @@
             this.Idtext.Name = "Idtext";
             this.Idtext.Size = new System.Drawing.Size(206, 20);
             this.Idtext.TabIndex = 1;
-            
             // 
             // Nombre
             // 
@@ -76,7 +75,6 @@
             this.NombreText.Name = "NombreText";
             this.NombreText.Size = new System.Drawing.Size(206, 20);
             this.NombreText.TabIndex = 3;
-            
             // 
             // TelefonoText
             // 
@@ -84,7 +82,6 @@
             this.TelefonoText.Name = "TelefonoText";
             this.TelefonoText.Size = new System.Drawing.Size(206, 20);
             this.TelefonoText.TabIndex = 5;
-            
             // 
             // Telefono
             // 
@@ -113,7 +110,6 @@
             this.SocioDeCoop.Name = "SocioDeCoop";
             this.SocioDeCoop.Size = new System.Drawing.Size(206, 21);
             this.SocioDeCoop.TabIndex = 7;
-            
             // 
             // Titulo
             // 
@@ -162,7 +158,9 @@
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.Idtext);
             this.Controls.Add(this.Id);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RegistroClientes";
             this.Text = "Registro Clientes";
             this.ResumeLayout(false);

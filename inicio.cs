@@ -89,5 +89,6 @@ namespace FotocopiadoraFacultad
             this.Close();
         }
 
+       
     }
 }

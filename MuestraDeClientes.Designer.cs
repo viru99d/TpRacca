@@ -173,7 +173,9 @@
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.Buscar);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MuestraDeClientes";
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
